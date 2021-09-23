@@ -233,14 +233,13 @@ app.post('/', function(req, response) {
                     },{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Payment</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Payment",
+                        Text: "<font color=#323232><b>Contact Us</b></font>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    }
-                ];
+                    }];
 
                     var options2 = {
                         method: 'POST',
@@ -333,9 +332,9 @@ app.post('/', function(req, response) {
                     },{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Payment</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Payment",
+                        Text: "<font color=#323232><b>Contact Us</b></font>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
@@ -353,6 +352,104 @@ app.post('/', function(req, response) {
                                 Type: "rich_media",
                                 ButtonsGroupColumns: 6,
                                 ButtonsGroupRows: 2,
+                                BgColor: "#FFFFFF",
+                                Buttons: buttons
+                            }
+                        },
+                        json: true
+                    };     
+                    request(options2, function(error2, res2, body2) {
+                        if (error) throw new Error(error);
+                        console.log(body);
+                    });               
+                });
+            });
+        }
+        else if(message === "Pasig"){
+            // setting options to request susi bot.
+            var options1 = {
+                method: 'GET',
+                url: 'http://api.susi.ai/susi/chat.json',
+                qs: {
+                    timezoneOffset: '-330',
+                    q: message
+                }
+            };
+
+            // A request to the Susi bot
+            request(options1, function(error1, response1, body1) {
+                if (error1) throw new Error(error1);
+                // answer fetched from susi
+                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 1,
+                        tracking_data: 'tracking data',
+                        type: 'text',
+                        text: 'Here are the list of Stores we have in ' + message + ' :' 
+                    },
+                    json: true
+                };
+
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);
+
+                    var buttons = [{
+                        Columns: 6,
+                        Rows: 1,
+                        "Text":"<font color=#323232><b>Ayala Mall Feliz</b></font><font color=#777777><br>Second Flr. Ayala Mall Feliz Marikina-Infanta Highway, Pasig City</font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Ayala Mall Feliz",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Services</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "Services",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Contact Us</b></font>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }];
+
+                    var options2 = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.sender.id,
+                            min_api_version: 7,
+                            type: 'rich_media',
+                            rich_media: {
+                                Type: "rich_media",
+                                ButtonsGroupColumns: 6,
+                                ButtonsGroupRows: 7,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
