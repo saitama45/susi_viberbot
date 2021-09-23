@@ -90,21 +90,21 @@ app.post('/', function(req, response) {
         else if(message === "Get started"){
 
             // setting options to request susi bot.
-            // var options1 = {
-            //     method: 'GET',
-            //     url: 'http://api.susi.ai/susi/chat.json',
-            //     qs: {
-            //         timezoneOffset: '-330',
-            //         q: message
-            //     }
-            // };
+            var options1 = {
+                method: 'GET',
+                url: 'http://api.susi.ai/susi/chat.json',
+                qs: {
+                    timezoneOffset: '-330',
+                    q: message
+                }
+            };
 
             // A request to the Susi bot
             request(options1, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
-                // ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-                ans = new TextMessage(`Hi ` + req.body.user.name + `! Thank you for getting started to talk with us. Please tap "I Agree" to continue.`);
+                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                // ans = new TextMessage(`Hi ` + req.body.user.name + `! Thank you for getting started to talk with us. Please tap "I Agree" to continue.`);
                 
                 var options = {
                     method: 'POST',
@@ -115,7 +115,8 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: ans + '\nSelect one of the following:'
+                        // text: ans + '\nSelect one of the following:'
+                        text: `Hi ` + req.body.user.name + ` ! Thank you for getting started to talk with us. Please tap "I Agree" to continue.`
                     },
                     json: true
                 };
