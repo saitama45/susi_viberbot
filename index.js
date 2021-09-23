@@ -116,7 +116,7 @@ app.post('/', function(req, response) {
                         tracking_data: 'tracking data',
                         type: 'text',
                         // text: ans + '\nSelect one of the following:'
-                        text: 'Hi ' + req.body.user.name + ' ! Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
+                        text: 'Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
                     },
                     json: true
                 };
