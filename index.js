@@ -136,7 +136,7 @@ app.post('/', function(req, response) {
                         Rows: 1,
                         Text: "<font color=#323232><b>Terms of Use</b></font>",
                         "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/Promo",
+                        "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
@@ -268,7 +268,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Contribution"){
+        else if(message === "Branches"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -294,7 +294,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: ans
+                        text: 'Type the City you wish to check so that I can send the list of stores we have in that area.'
                     },
                     json: true
                 };
@@ -306,9 +306,36 @@ app.post('/', function(req, response) {
                     var buttons = [{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Visit repository</b></font>",
-                        "ActionType": "open-url",
-                        "ActionBody": "https://www.github.com/fossasia/susi_server",
+                        Text: "<font color=#323232><b>Branches</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "Branches",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Products</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "Products",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Services</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "Services",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Payment</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "Payment",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
