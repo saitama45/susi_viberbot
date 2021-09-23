@@ -614,7 +614,7 @@ app.post('/', function(req, response) {
                 min_api_version: 1,
                 tracking_data: 'tracking data',
                 type: 'text',
-                text: 'Welcome to SUSI.AI!, ' + req.body.user.name + '.',
+                text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
                 keyboard: {
                     "Type": "keyboard",
                     "DefaultHeight": true,
