@@ -113,7 +113,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: '\nThank you for getting started to chat with us. Please tap "I Agree" to continue.'
+                        text: '\nHi ' + req.body.sender.name + '! Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
                     },
                     json: true
                 };
@@ -168,7 +168,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Start chatting"){
+        else if(message === "I Agree"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -194,7 +194,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: ans + '\nYou can try the following:'
+                        text: '\nHow can we help you? You may choose from the options below to continue.'
                     },
                     json: true
                 };
