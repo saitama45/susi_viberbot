@@ -100,7 +100,7 @@ app.post('/', function(req, response) {
             };
 
             // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
+            request(request, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
                 // ans = (JSON.parse(body1)).answers[0].actions[0].expression;
