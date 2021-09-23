@@ -88,21 +88,23 @@ app.post('/', function(req, response) {
 
         if(message.indexOf("https://") !== -1){}
         else if(message === "Get started"){
+
             // setting options to request susi bot.
-            var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
-            };
+            // var options1 = {
+            //     method: 'GET',
+            //     url: 'http://api.susi.ai/susi/chat.json',
+            //     qs: {
+            //         timezoneOffset: '-330',
+            //         q: message
+            //     }
+            // };
 
             // A request to the Susi bot
             request(options1, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                // ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                ans = new TextMessage(`Hi ` + req.body.user.name + `! Thank you for getting started to talk with us. Please tap "I Agree" to continue.`);
                 
                 var options = {
                     method: 'POST',
@@ -125,27 +127,18 @@ app.post('/', function(req, response) {
                     var buttons = [{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Visit repository</b></font>",
+                        Text: "<font color=#323232><b>I Agree</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "I Agree",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Terms of Use</b></font>",
                         "ActionType": "open-url",
-                        "ActionBody": "https://www.github.com/fossasia/susi_server",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Start chatting</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Start chatting",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>How to contribute?</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Contribution",
+                        "ActionBody": "http://www.executiveoptical.com/Promo",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
@@ -614,7 +607,8 @@ app.post('/', function(req, response) {
                 min_api_version: 1,
                 tracking_data: 'tracking data',
                 type: 'text',
-                text: 'Welcome to SUSI.AI!, ' + req.body.user.name + '.',
+                // text: 'Welcome to SUSI.AI!, ' + req.body.user.name + '.',
+                text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
                 keyboard: {
                     "Type": "keyboard",
                     "DefaultHeight": true,
