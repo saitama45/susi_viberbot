@@ -400,7 +400,9 @@ app.post('/', function(req, response) {
                 request(options, function(error, res, body) {
                     if (error) throw new Error(error);
 
-                    var buttons = [{
+                    var buttons = 
+                    [
+                    {
                         Columns: 6,
                         Rows: 3,
                         Text: "<font color=#323232><b>Ayala Mall Feliz</b></font><font color=#777777><br>Second Flr. Ayala Mall Feliz Marikina-Infanta Highway, Pasig City</font>", 
@@ -409,7 +411,8 @@ app.post('/', function(req, response) {
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    },{
+                    },
+                    {
                         Columns: 6,
                         Rows: 2,
                         Text: "<font color=#323232><b>Learn More</b></font>",
@@ -418,7 +421,8 @@ app.post('/', function(req, response) {
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    },{
+                    },
+                    {
                         Columns: 6,
                         Rows: 3,
                         Text: "<font color=#323232><b>Estancia</b></font><font color=#777777><br>Lower Level Estancia in Capitol Commons 1605 Meralco Avenue, Ortigas Center  Pasig City</font>", 
@@ -427,7 +431,8 @@ app.post('/', function(req, response) {
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    },{
+                    },
+                    {
                         Columns: 6,
                         Rows: 2,
                         Text: "<font color=#323232><b>Learn More</b></font>",
@@ -436,7 +441,28 @@ app.post('/', function(req, response) {
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    }];
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Metropoint</b></font><font color=#777777><br>3/F Metropoint Mall, EDSA cor. Taft Ave., Pasay City Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Metropoint",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Metropoint",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }
+                ];
 
                     var options2 = {
                         method: 'POST',
