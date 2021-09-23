@@ -252,7 +252,7 @@ app.post('/', function(req, response) {
                             rich_media: {
                                 Type: "rich_media",
                                 ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 3,
+                                ButtonsGroupRows: 2,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
@@ -403,7 +403,7 @@ app.post('/', function(req, response) {
                     var buttons = [{
                         Columns: 6,
                         Rows: 2,
-                        "Text":"<font color=#323232><b>Ayala Mall Feliz</b></font><font color=#777777><br>Second Flr. Ayala Mall Feliz Marikina-Infanta Highway, Pasig City</font>", 
+                        Text: "<font color=#323232><b>Ayala Mall Feliz</b></font><font color=#777777><br>Second Flr. Ayala Mall Feliz Marikina-Infanta Highway, Pasig City</font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Ayala Mall Feliz",
                         "TextSize": "large",
@@ -421,7 +421,7 @@ app.post('/', function(req, response) {
                     },{
                         Columns: 6,
                         Rows: 2,
-                        Text: "<font color=#323232><b>Estancia</b></font>",
+                        Text: "<font color=#323232><b>Estancia</b></font><font color=#777777><br>Lower Level Estancia in Capitol Commons 1605 Meralco Avenue, Ortigas Center  Pasig City</font>", 
                         "ActionType": "reply",
                         "ActionBody": "Estancia",
                         "TextSize": "large",
