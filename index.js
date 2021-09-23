@@ -89,18 +89,18 @@ app.post('/', function(req, response) {
         if(message.indexOf("https://") !== -1){}
         else if(message === "Get started"){           
 
-            // setting options to request susi bot.
-            // var options1 = {
-            //     method: 'GET',
-            //     url: 'http://api.susi.ai/susi/chat.json',
-            //     qs: {
-            //         timezoneOffset: '-330',
-            //         q: message
-            //     }
-            // };
+            //setting options to request susi bot.
+            var options1 = {
+                method: 'GET',
+                url: 'http://api.susi.ai/susi/chat.json',
+                qs: {
+                    timezoneOffset: '-330',
+                    q: message
+                }
+            };
 
             // A request to the Susi bot
-            request("request", function(error1, response1, body1) {
+            request(options1, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
                 ans = (JSON.parse(body1)).answers[0].actions[0].expression;
