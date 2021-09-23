@@ -113,7 +113,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: ans + '\nSelect one of the following:'
+                        text: ans + '\nThank you for getting started to chat with us. Please tap "I Agree" to continue.'
                     },
                     json: true
                 };
