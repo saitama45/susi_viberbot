@@ -365,7 +365,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Pasig"){
+        else if(message === "Pasig" || message === "pasig"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -402,7 +402,7 @@ app.post('/', function(req, response) {
 
                     var buttons = [{
                         Columns: 6,
-                        Rows: 1,
+                        Rows: 2,
                         "Text":"<font color=#323232><b>Ayala Mall Feliz</b></font><font color=#777777><br>Second Flr. Ayala Mall Feliz Marikina-Infanta Highway, Pasig City</font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Ayala Mall Feliz",
@@ -413,26 +413,26 @@ app.post('/', function(req, response) {
                         Columns: 6,
                         Rows: 1,
                         Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Ayala Mall Feliz",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },{
                         Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Services</b></font>",
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Estancia</b></font>",
                         "ActionType": "reply",
-                        "ActionBody": "Services",
+                        "ActionBody": "Estancia",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Contact Us</b></font>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Estancia",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
