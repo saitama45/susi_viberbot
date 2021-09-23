@@ -206,31 +206,41 @@ app.post('/', function(req, response) {
                     var buttons = [{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>What is FOSSASIA?</b></font>",
+                        Text: "<font color=#323232><b>Branches</b></font>",
                         "ActionType": "reply",
-                        "ActionBody": "What is FOSSASIA?",
+                        "ActionBody": "Branches",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Who is Einstein?</b></font>",
+                        Text: "<font color=#323232><b>Products</b></font>",
                         "ActionType": "reply",
-                        "ActionBody": "Who is Einstein?",
+                        "ActionBody": "Products",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Borders with India</b></font>",
+                        Text: "<font color=#323232><b>Services</b></font>",
                         "ActionType": "reply",
-                        "ActionBody": "Borders with India",
+                        "ActionBody": "Services",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    }];
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Payment</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "Payment",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }
+                ];
 
                     var options2 = {
                         method: 'POST',
