@@ -125,27 +125,18 @@ app.post('/', function(req, response) {
                     var buttons = [{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Visit repository</b></font>",
+                        Text: "<font color=#323232><b>I Agree</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "I Agree",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Terms of Use</b></font>",
                         "ActionType": "open-url",
-                        "ActionBody": "https://www.github.com/fossasia/susi_server",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Start chatting</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Start chatting",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>How to contribute?</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Contribution",
+                        "ActionBody": "http://www.executiveoptical.com/Promo",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
@@ -618,6 +609,7 @@ app.post('/', function(req, response) {
                 keyboard: {
                     "Type": "keyboard",
                     "DefaultHeight": true,
+                    "InputFieldState": "hidden",
                     "Buttons": [{
                         "ActionType": "reply",
                         "ActionBody": "Get started",
