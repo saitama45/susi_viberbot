@@ -470,7 +470,7 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
+                            min_api_version: 7,
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
