@@ -89,8 +89,7 @@ app.post('/', function(req, response) {
         if(message.indexOf("https://") !== -1){}
         else if(message === "Get started"){     
             
-            // Welcome Message
-            var request = require("request");
+            // Welcome Message     
             var options = {
                 method: 'POST',
                 url: 'https://chatapi.viber.com/pa/send_message',
