@@ -115,8 +115,8 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        // text: ans + '\nSelect one of the following:'
-                        text: 'Hi ' + req.body.user.name + ' ! Thank you for getting started to talk with us. Please tap "I Agree" to continue.'
+                        text: ans + '\nSelect one of the following:'
+                        // text: 'Hi ' + req.body.user.name + ' ! Thank you for getting started to talk with us. Please tap "I Agree" to continue.'
                     },
                     json: true
                 };
