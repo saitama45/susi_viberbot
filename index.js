@@ -358,7 +358,11 @@ app.post('/', function(req, response) {
                             }
                         },
                         json: true
-                    };                    
+                    };     
+                    request(options2, function(error2, res2, body2) {
+                        if (error) throw new Error(error);
+                        console.log(body);
+                    });               
                 });
             });
         }
