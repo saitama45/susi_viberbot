@@ -602,7 +602,7 @@ app.post('/', function(req, response) {
             headers: headerBody,
             body: {
                 receiver: req.body.user.id,
-                min_api_version: 1,
+                min_api_version: 3,
                 tracking_data: 'tracking data',
                 type: 'text',
                 text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
