@@ -123,9 +123,9 @@ app.post('/', function(req, response) {
                     if (error) throw new Error(error);
 
                     var buttons = [{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#494E67><b>I Agree</b></font>",
+                        "Columns": 6,
+                        "Rows": 1,
+                        "Text": "<font color=#494E67><b>I Agree</b></font>",
                         "ActionType": "reply",
                         "ActionBody": "I Agree",
                         "TextSize": "large",
@@ -133,9 +133,9 @@ app.post('/', function(req, response) {
                         "TextHAlign": "middle",
                         "BgColor": "#f7bb3f",
                     },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#494E67><b>Terms of Use</b></font>",
+                        "Columns": 6,
+                        "Rows": 1,
+                        "Text": "<font color=#494E67><b>Terms of Use</b></font>",
                         "ActionType": "open-url",
                         "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
                         "TextSize": "large",
@@ -143,7 +143,7 @@ app.post('/', function(req, response) {
                         "TextHAlign": "middle",
                         "BgColor": "#f7bb3f",                        
                     }];                
-                                                            
+
                     var options2 = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
