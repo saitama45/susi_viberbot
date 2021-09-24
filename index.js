@@ -150,7 +150,7 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
+                            min_api_version: 4,
                             type: 'text',
                             rich_media: {
                                 Type: "keyboard",                                
