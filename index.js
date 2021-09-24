@@ -446,6 +446,11 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 3,
+                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
                         Text: "<font color=#323232><b>Load More</b></font>", 
                         "ActionType": "reply",
                         "ActionBody": "Load More Manila",
@@ -461,7 +466,7 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 4,
+                            min_api_version: 7,
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
