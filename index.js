@@ -446,7 +446,7 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 3,
-                        Text: "<font color=#323232><b>Load More</b></font>", 
+                        Text: "<font color=#323232><b>Load More 1</b></font>", 
                         "ActionType": "reply",
                         "ActionBody": "Load More 1",
                         "TextSize": "large",
@@ -546,7 +546,7 @@ app.post('/', function(req, response) {
                             min_api_version: 1,
                             tracking_data: 'tracking data',
                             type: 'text',
-                            text: '\nHow can we help you? You may choose from the options below to continue.'
+                            text: ''
                         },
                         json: true
                     };
