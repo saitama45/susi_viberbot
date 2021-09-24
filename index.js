@@ -151,8 +151,8 @@ app.post('/', function(req, response) {
                         body: {
                             receiver: req.body.sender.id,
                             min_api_version: 4,
-                            type: 'text',
-                            rich_media: {
+                            type: 'keyboard',
+                            keyboard: {
                                 Type: "keyboard",                                
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
