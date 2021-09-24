@@ -627,13 +627,21 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 3,
+                        Silent: true,
+                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg",
+                        "ActionType":"reply",
+                        "ActionBody":"See More Manila 2",
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
                         Text: "<font color=#323232><b>See More</b></font>", 
                         "ActionType": "reply",
                         "ActionBody": "See More Manila 2",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    },                                                          
+                    },                                                                         
                 ];
 
                     var options2 = {
@@ -642,7 +650,7 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 4,
+                            min_api_version: 7,
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
