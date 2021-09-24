@@ -448,7 +448,7 @@ app.post('/', function(req, response) {
                         Rows: 3,
                         Text: "<font color=#323232><b>Load More</b></font>", 
                         "ActionType": "reply",
-                        "ActionBody": "Load More 1",
+                        "ActionBody": "Load More Manila",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
@@ -520,7 +520,7 @@ app.post('/', function(req, response) {
                 });
             });            
         }
-        else if(message === "Load More 1"){
+        else if(message === "Load More Manila"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -804,7 +804,7 @@ app.post('/', function(req, response) {
                         Rows: 3,
                         Text: "<font color=#323232><b>Load More</b></font>", 
                         "ActionType": "reply",
-                        "ActionBody": "Load More 2",
+                        "ActionBody": "Load More Manila 2",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
