@@ -355,7 +355,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 1,
+                        Rows: 4,
                         Text: "<font color=#323232><b>Learn More</b></font>",
                         "ActionType":"reply",
                         "ActionBody": "Learn More in SM Southmall",
