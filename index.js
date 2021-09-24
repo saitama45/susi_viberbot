@@ -980,7 +980,7 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Accessories</b></font>", 
+                        Text: "<font color=#87CEFA><b>Accessories</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Accessories",
                         "TextSize": "large",
