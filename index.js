@@ -365,7 +365,331 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Pasig" || message === "pasig"){
+        else if(message === "Manila" || message === "manila" || message === "metro manila" || message === "Metro Manila" || message === "metro Manila" || message === "Metro manila"){
+            // setting options to request susi bot.
+            var options1 = {
+                method: 'GET',
+                url: 'http://api.susi.ai/susi/chat.json',
+                qs: {
+                    timezoneOffset: '-330',
+                    q: message
+                }
+            };
+
+            // A request to the Susi bot
+            request(options1, function(error1, response1, body1) {
+                if (error1) throw new Error(error1);
+                // answer fetched from susi
+                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 1,
+                        tracking_data: 'tracking data',
+                        type: 'text',
+                        text: 'Here are the list of Stores we have in ' + message + ' :' 
+                    },
+                    json: true
+                };
+
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);
+
+                    var buttons = 
+                    [
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM Southmall</b></font><font color=#777777><br>SMS 1203 G/F SM Southmall, Las Pinas, Metro Manila</font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "SM Southmall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in SM Southmall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM Manila</b></font><font color=#777777><br>Stall 106 SM City City Manila, Concepcion cor. Arroceros & SAN Marcelino sts. Ermita Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "SM Manila",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in SM Manila",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Metropoint</b></font><font color=#777777><br>3/F Metropoint Mall, EDSA cor. Taft Ave., Pasay City Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Metropoint",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Metropoint",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Market Market</b></font><font color=#777777><br>2/F Stall # S232 The Fort Bonifacio Global City Taguig, Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Market Market",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Market Market",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM San Lazaro</b></font><font color=#777777><br>Upper G/F SM City San Lazaro, F Huertas cor. A.H. Lacson St., Sta. Cruz, Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "SM San Lazaro",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in SM San Lazaro",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Virra Mall</b></font><font color=#777777><br>2/F V-Mall, Greenhills Shopping Center, Greenhills San Juan, Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Virra Mall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Virra Mall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Virra Mall</b></font><font color=#777777><br>2/F V-Mall, Greenhills Shopping Center, Greenhills San Juan, Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Virra Mall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Virra Mall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM City Sta. Mesa</b></font><font color=#777777><br>102b Upper Ground Flr. SM City Sta. Mesa R.Magsaysay cor. Araneta Avenue, Sta. Mesa</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "SM City Sta. Mesa",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in SM City Sta. Mesa",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Tutuban Center</b></font><font color=#777777><br>First Level Main Station  Tutuban Center, Tondo Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Tutuban Center",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Tutuban Center",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Robinsons Place Manila EO Kids and Up</b></font><font color=#777777><br>Level 3 Midtown Wing Robinsons Place Manila Pedro Gil cor. M. Adriatico St. Ermita Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Robinsons Place Manila EO Kids and Up",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Robinsons Place Manila EO Kids and Up",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Vista Mall Las Pinas",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Vista Mall Las Pinas",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Puregold Tayuman</b></font><font color=#777777><br>Ground Flr. Puregold Tayuman No. 31 Juan Luna St cor. Tayuman Tondo Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Puregold Tayuman",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in Puregold Tayuman",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>RP Manila Tempo</b></font><font color=#777777><br>Level 3 Robinsons Ermita Manila, Pedro Gil St., Ermita Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "RP Manila Tempo",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in RP Manila Tempo",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }
+                ];
+
+                    var options2 = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.sender.id,
+                            min_api_version: 2,
+                            type: 'rich_media',
+                            rich_media: {
+                                Type: "rich_media",
+                                ButtonsGroupColumns: 6,
+                                ButtonsGroupRows: 7,
+                                BgColor: "#FFFFFF",
+                                Buttons: buttons
+                            }
+                        },
+                        json: true
+                    };     
+                    request(options2, function(error2, res2, body2) {
+                        if (error) throw new Error(error);
+                        console.log(body);
+                    });               
+                });
+            });
+        }
+        else if(message === "Pasig" || message === "pasig" || message === "pasig city" || message === "Pasig City" || message === "pasig City" || message === "Pasig city"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -441,27 +765,7 @@ app.post('/', function(req, response) {
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Metropoint</b></font><font color=#777777><br>3/F Metropoint Mall, EDSA cor. Taft Ave., Pasay City Metro Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Metropoint",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in Metropoint",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }
+                    },                    
                 ];
 
                     var options2 = {
