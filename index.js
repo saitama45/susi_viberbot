@@ -125,7 +125,7 @@ app.post('/', function(req, response) {
                     var buttons = [{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>I Agree</b></font>",
+                        Text: "<font color=#494E67><b>I Agree</b></font>",
                         "ActionType": "reply",
                         "ActionBody": "I Agree",
                         "TextSize": "large",
@@ -134,13 +134,13 @@ app.post('/', function(req, response) {
                     },{
                         Columns: 6,
                         Rows: 1,
-                        Text: "<font color=#323232><b>Terms of Use</b></font>",
+                        Text: "<font color=#494E67><b>Terms of Use</b></font>",
                         "ActionType": "open-url",
                         "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
-                    }];
+                    }];                    
 
                     var options2 = {
                         method: 'POST',
@@ -149,12 +149,13 @@ app.post('/', function(req, response) {
                         body: {
                             receiver: req.body.sender.id,
                             min_api_version: 4,
-                            type: 'keyboard',
+                            type: 'text',
                             keyboard: {
                                 Type: "keyboard",
-                                // ButtonsGroupColumns: 6,
-                                // ButtonsGroupRows: 3,
-                                BgColor: "#FFFFFF",
+                                DefaultHeight: true,
+                                InputFieldState: "hidden",                                
+                                BgColor: "#f7bb3f",
+                                TextSize: "large",
                                 Buttons: buttons
                             }
                         },
