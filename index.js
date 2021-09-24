@@ -150,8 +150,8 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 4,
-                            type: 'keyboard',
+                            min_api_version: 1,
+                            type: 'text',
                             keyboard: {
                                 Type: "keyboard",                                
                                 BgColor: "#FFFFFF",
