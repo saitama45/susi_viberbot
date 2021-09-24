@@ -470,7 +470,7 @@ app.post('/', function(req, response) {
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
-                                ButtonsGroupColumns: 7,
+                                ButtonsGroupColumns: 6,
                                 ButtonsGroupRows: 7,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
