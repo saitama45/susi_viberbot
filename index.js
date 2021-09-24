@@ -532,6 +532,158 @@ app.post('/', function(req, response) {
             };
 
             // A request to the Susi bot
+            // request(options1, function(error1, response1, body1) {
+            //     if (error1) throw new Error(error1);
+            //     // answer fetched from susi
+            //     ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                
+            //     var options = {
+            //         method: 'POST',
+            //         url: 'https://chatapi.viber.com/pa/send_message',
+            //         headers: headerBody,
+            //         body: {
+            //             receiver: req.body.sender.id,
+            //             min_api_version: 1,
+            //             tracking_data: 'tracking data',
+            //             type: 'text',
+            //             text: '-'
+            //         },
+            //         json: true
+            //     };
+
+            //     // request to the chat api of viber.
+            //     request(options, function(error, res, body) {
+            //         if (error) throw new Error(error);
+
+            //         var buttons = [
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Virra Mall</b></font><font color=#777777><br>2/F V-Mall, Greenhills Shopping Center, Greenhills San Juan, Metro Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Virra Mall",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Virra Mall",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },                   
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>SM City Sta. Mesa</b></font><font color=#777777><br>102b Upper Ground Flr. SM City Sta. Mesa R.Magsaysay cor. Araneta Avenue, Sta. Mesa</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "SM City Sta. Mesa",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in SM City Sta. Mesa",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Tutuban Center</b></font><font color=#777777><br>First Level Main Station  Tutuban Center, Tondo Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Tutuban Center",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Tutuban Center",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Robinsons Place Manila EO Kids and Up</b></font><font color=#777777><br>Level 3 Midtown Wing Robinsons Place Manila Pedro Gil cor. M. Adriatico St. Ermita Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Robinsons Place Manila EO Kids and Up",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Robinsons Place Manila EO Kids and Up",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Vista Mall Las Pinas",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Load More</b></font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Load More 2",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+            //     ];
+
+            //         var options2 = {
+            //             method: 'POST',
+            //             url: 'https://chatapi.viber.com/pa/send_message',
+            //             headers: headerBody,
+            //             body: {
+            //                 receiver: req.body.sender.id,
+            //                 min_api_version: 2,
+            //                 type: 'rich_media',
+            //                 rich_media: {
+            //                     Type: "rich_media",
+            //                     ButtonsGroupColumns: 6,
+            //                     ButtonsGroupRows: 2,
+            //                     BgColor: "#FFFFFF",
+            //                     Buttons: buttons
+            //                 }
+            //             },
+            //             json: true
+            //         };
+
+            //         request(options2, function(error2, res2, body2) {
+            //             if (error) throw new Error(error);
+            //             console.log(body);
+            //         });
+            //     });
+            // });
+
             request(options1, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
@@ -546,7 +698,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: '-'
+                        text: 'More lists:' 
                     },
                     json: true
                 };
@@ -555,7 +707,8 @@ app.post('/', function(req, response) {
                 request(options, function(error, res, body) {
                     if (error) throw new Error(error);
 
-                    var buttons = [
+                    var buttons = 
+                    [
                     {
                         Columns: 6,
                         Rows: 3,
@@ -636,26 +789,26 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },
-                    // {
-                    //     Columns: 6,
-                    //     Rows: 3,
-                    //     Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
-                    //     "ActionType": "reply",
-                    //     "ActionBody": "Vista Mall Las Pinas",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },
-                    // {
-                    //     Columns: 6,
-                    //     Rows: 3,
-                    //     Text: "<font color=#323232><b>Load More</b></font>", 
-                    //     "ActionType": "reply",
-                    //     "ActionBody": "Load More 2",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Vista Mall Las Pinas",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Load More</b></font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Load More 2",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },                                                          
                 ];
 
                     var options2 = {
@@ -664,25 +817,24 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
+                            min_api_version: 4,
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
                                 ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 2,
+                                ButtonsGroupRows: 7,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
                         },
                         json: true
-                    };
-
+                    };     
                     request(options2, function(error2, res2, body2) {
                         if (error) throw new Error(error);
                         console.log(body);
-                    });
+                    });               
                 });
-            });
+            }); 
         }
         else if(message === "Pasig" || message === "pasig" || message === "pasig city" || message === "Pasig City" || message === "pasig City" || message === "Pasig city"){
             // setting options to request susi bot.
