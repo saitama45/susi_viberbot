@@ -546,7 +546,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: ''
+                        text: '-'
                     },
                     json: true
                 };
