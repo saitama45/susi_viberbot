@@ -980,6 +980,7 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 1,
+                        BgColor: "#87CEFA",
                         Text: "<b>Accessories</b>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Accessories",
