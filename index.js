@@ -298,6 +298,11 @@ app.post('/', function(req, response) {
                     json: true
                 };
 
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);
+                    console.log(body);
+                });
+
                 // request to the chat api of viber.
                 // request(options, function(error, res, body) {
                 //     if (error) throw new Error(error);
