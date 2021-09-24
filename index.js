@@ -94,7 +94,7 @@ app.post('/', function(req, response) {
                 url: 'http://api.susi.ai/susi/chat.json',
                 qs: {
                     timezoneOffset: '-330',
-                    q: 'Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
+                    q: message
                 }
             };
 
