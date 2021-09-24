@@ -454,7 +454,7 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 2,
-                        Text: "<font color=#323232><b>Load More</b></font>", 
+                        Text: "<font color=#323232><b>See More</b></font>", 
                         "ActionType": "reply",
                         "ActionBody": "See More Manila",
                         "TextSize": "large",
@@ -488,7 +488,7 @@ app.post('/', function(req, response) {
                 });
             });            
         }
-        else if(message === "Load More Manila"){
+        else if(message === "See More Manila"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -627,9 +627,9 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 3,
-                        Text: "<font color=#323232><b>Load More</b></font>", 
+                        Text: "<font color=#323232><b>See More</b></font>", 
                         "ActionType": "reply",
-                        "ActionBody": "Load More Manila 2",
+                        "ActionBody": "See More Manila 2",
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
@@ -661,7 +661,7 @@ app.post('/', function(req, response) {
                 });
             }); 
         }
-        else if(message === "Load More Manila 2"){
+        else if(message === "See More Manila 2"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
