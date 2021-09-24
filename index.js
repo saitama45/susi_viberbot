@@ -356,6 +356,7 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 2,
+                        Silent: true,
                         Text: "<font color=#323232><b>Book Appointment</b></font>",
                         "ActionType":"open-url",
                         "ActionBody": "http://www.executiveoptical.com/Appointment",
