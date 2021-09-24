@@ -282,7 +282,7 @@ app.post('/', function(req, response) {
             request(options1, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                ans = (JSON.parse(body1)).answers[0].actions[0].expression;                
                 
                 var options = {
                     method: 'POST',
@@ -675,7 +675,7 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
+                            min_api_version: 4,
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
