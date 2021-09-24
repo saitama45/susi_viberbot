@@ -423,31 +423,31 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>SM San Lazaro</b></font><font color=#777777><br>Upper G/F SM City San Lazaro, F Huertas cor. A.H. Lacson St., Sta. Cruz, Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "SM San Lazaro",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in SM San Lazaro",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
                     // {
                     //     Columns: 6,
                     //     Rows: 3,
-                    //     "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg"
+                    //     Text: "<font color=#323232><b>SM San Lazaro</b></font><font color=#777777><br>Upper G/F SM City San Lazaro, F Huertas cor. A.H. Lacson St., Sta. Cruz, Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "SM San Lazaro",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
                     // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in SM San Lazaro",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg"
+                    },
                     {
                         Columns: 6,
                         Rows: 2,
