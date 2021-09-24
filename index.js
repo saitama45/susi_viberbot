@@ -462,47 +462,27 @@ app.post('/', function(req, response) {
                         "TextSize": "large",
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
+                    },                   
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM City Sta. Mesa</b></font><font color=#777777><br>102b Upper Ground Flr. SM City Sta. Mesa R.Magsaysay cor. Araneta Avenue, Sta. Mesa</font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "SM City Sta. Mesa",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
                     },
-                    // {
-                    //     Columns: 6,
-                    //     Rows: 3,
-                    //     Text: "<font color=#323232><b>Virra Mall</b></font><font color=#777777><br>2/F V-Mall, Greenhills Shopping Center, Greenhills San Juan, Metro Manila</font>", 
-                    //     "ActionType": "reply",
-                    //     "ActionBody": "Virra Mall",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },
-                    // {
-                    //     Columns: 6,
-                    //     Rows: 2,
-                    //     Text: "<font color=#323232><b>Learn More</b></font>",
-                    //     "ActionType":"reply",
-                    //     "ActionBody": "Learn More in Virra Mall",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },
-                    // {
-                    //     Columns: 6,
-                    //     Rows: 3,
-                    //     Text: "<font color=#323232><b>SM City Sta. Mesa</b></font><font color=#777777><br>102b Upper Ground Flr. SM City Sta. Mesa R.Magsaysay cor. Araneta Avenue, Sta. Mesa</font>", 
-                    //     "ActionType": "reply",
-                    //     "ActionBody": "SM City Sta. Mesa",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },
-                    // {
-                    //     Columns: 6,
-                    //     Rows: 2,
-                    //     Text: "<font color=#323232><b>Learn More</b></font>",
-                    //     "ActionType":"reply",
-                    //     "ActionBody": "Learn More in SM City Sta. Mesa",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Learn More</b></font>",
+                        "ActionType":"reply",
+                        "ActionBody": "Learn More in SM City Sta. Mesa",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
                     // {
                     //     Columns: 6,
                     //     Rows: 3,
