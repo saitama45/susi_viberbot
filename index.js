@@ -450,7 +450,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 3,
+                        Rows: 2,
                         Text: "<font color=#323232><b>Load More</b></font>", 
                         "ActionType": "reply",
                         "ActionBody": "Load More Manila",
