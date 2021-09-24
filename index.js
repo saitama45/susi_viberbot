@@ -443,21 +443,21 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg"
-                    },
                     // {
                     //     Columns: 6,
-                    //     Rows: 2,
-                    //     Text: "<font color=#323232><b>Load More</b></font>", 
-                    //     "ActionType": "reply",
-                    //     "ActionBody": "Load More Manila",
-                    //     "TextSize": "large",
-                    //     "TextVAlign": "middle",
-                    //     "TextHAlign": "middle"
-                    // },                                                            
+                    //     Rows: 3,
+                    //     "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg"
+                    // },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>Load More</b></font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "Load More Manila",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },                                                            
                 ];
 
                     var options2 = {
