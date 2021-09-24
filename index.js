@@ -125,7 +125,7 @@ app.post('/', function(req, response) {
                     var options2 = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
-                        headers: headerBody,
+                        headers: headerBody,                        
                         body: {
                             receiver: req.body.sender.id,
                             min_api_version: 4,
