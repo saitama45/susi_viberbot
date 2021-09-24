@@ -153,9 +153,7 @@ app.post('/', function(req, response) {
                             min_api_version: 2,
                             type: 'keyboard',
                             rich_media: {
-                                Type: "keyboard",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 2,
+                                Type: "keyboard",                                
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
