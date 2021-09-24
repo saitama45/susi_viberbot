@@ -153,10 +153,10 @@ app.post('/', function(req, response) {
                             min_api_version: 4,
                             type: 'text',
                             keyboard: {                                
-                                Type: "keyboard",
-                                DefaultHeight: true,
-                                InputFieldState: "hidden",                                                                
-                                Buttons: buttons
+                                "Type": "keyboard",
+                                "DefaultHeight": true,
+                                "InputFieldState": "hidden",                                                                
+                                "Buttons": buttons
                             }
                         },
                         json: true
