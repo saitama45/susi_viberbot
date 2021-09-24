@@ -142,7 +142,33 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle",
                         "BgColor": "#f7bb3f",                        
-                    }];                    
+                    }];                
+                    
+                    var options = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.user.id,
+                            min_api_version: 4,
+                            tracking_data: 'tracking data',
+                            type: 'text',
+                            text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
+                            keyboard: {
+                                "Type": "keyboard",
+                                "DefaultHeight": true,
+                                "InputFieldState": "hidden",
+                                "Buttons": [{
+                                    "ActionType": "reply",
+                                    "ActionBody": "Get started",
+                                    "Text": "<font color=\"#494E67\">Get started</font>",
+                                    "BgColor": "#f7bb3f",
+                                    "TextSize": "large"
+                                }]
+                            }
+                        },
+                        json: true
+                    };
 
                     var options2 = {
                         method: 'POST',
@@ -151,6 +177,7 @@ app.post('/', function(req, response) {
                         body: {
                             receiver: req.body.sender.id,
                             min_api_version: 4,
+                            tracking_data: 'tracking data',
                             type: 'text',
                             keyboard: {                                
                                 "Type": "keyboard",
