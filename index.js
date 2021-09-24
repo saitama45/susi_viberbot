@@ -354,8 +354,8 @@ app.post('/', function(req, response) {
                         "TextHAlign": "middle"
                     },
                     {
-                        Columns: 6,
-                        Rows: 3,
+                        Columns: 5,
+                        Rows: 2,
                         Text: "<font color=#323232><b>Learn More</b></font>",
                         "ActionType":"reply",
                         "ActionBody": "Learn More in SM Southmall",
