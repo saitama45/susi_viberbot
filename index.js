@@ -142,7 +142,7 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },
-                ];
+                    ];
 
                     var options2 = {
                         method: 'POST',
