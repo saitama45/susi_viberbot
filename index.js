@@ -391,7 +391,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: 'Here are the list of Stores we have in ' + message + ' :' 
+                        text: 'Here are the list of Stores we have in ' + message + ':' 
                     },
                     json: true
                 };
@@ -542,126 +542,126 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>SM City Sta. Mesa</b></font><font color=#777777><br>102b Upper Ground Flr. SM City Sta. Mesa R.Magsaysay cor. Araneta Avenue, Sta. Mesa</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "SM City Sta. Mesa",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in SM City Sta. Mesa",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Tutuban Center</b></font><font color=#777777><br>First Level Main Station  Tutuban Center, Tondo Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Tutuban Center",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in Tutuban Center",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Robinsons Place Manila EO Kids and Up</b></font><font color=#777777><br>Level 3 Midtown Wing Robinsons Place Manila Pedro Gil cor. M. Adriatico St. Ermita Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Robinsons Place Manila EO Kids and Up",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in Robinsons Place Manila EO Kids and Up",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Vista Mall Las Pinas",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in Vista Mall Las Pinas",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Puregold Tayuman</b></font><font color=#777777><br>Ground Flr. Puregold Tayuman No. 31 Juan Luna St cor. Tayuman Tondo Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Puregold Tayuman",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in Puregold Tayuman",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>RP Manila Tempo</b></font><font color=#777777><br>Level 3 Robinsons Ermita Manila, Pedro Gil St., Ermita Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "RP Manila Tempo",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 2,
-                        Text: "<font color=#323232><b>Learn More</b></font>",
-                        "ActionType":"reply",
-                        "ActionBody": "Learn More in RP Manila Tempo",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>SM City Sta. Mesa</b></font><font color=#777777><br>102b Upper Ground Flr. SM City Sta. Mesa R.Magsaysay cor. Araneta Avenue, Sta. Mesa</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "SM City Sta. Mesa",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in SM City Sta. Mesa",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Tutuban Center</b></font><font color=#777777><br>First Level Main Station  Tutuban Center, Tondo Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Tutuban Center",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Tutuban Center",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Robinsons Place Manila EO Kids and Up</b></font><font color=#777777><br>Level 3 Midtown Wing Robinsons Place Manila Pedro Gil cor. M. Adriatico St. Ermita Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Robinsons Place Manila EO Kids and Up",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Robinsons Place Manila EO Kids and Up",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Vista Mall Las Pinas",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Vista Mall Las Pinas",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Puregold Tayuman</b></font><font color=#777777><br>Ground Flr. Puregold Tayuman No. 31 Juan Luna St cor. Tayuman Tondo Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Puregold Tayuman",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in Puregold Tayuman",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>RP Manila Tempo</b></font><font color=#777777><br>Level 3 Robinsons Ermita Manila, Pedro Gil St., Ermita Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "RP Manila Tempo",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 2,
+                    //     Text: "<font color=#323232><b>Learn More</b></font>",
+                    //     "ActionType":"reply",
+                    //     "ActionBody": "Learn More in RP Manila Tempo",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // }
                 ];
 
                     var options2 = {
@@ -715,7 +715,7 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: 'Here are the list of Stores we have in ' + message + ' :' 
+                        text: 'Here are the list of Stores we have in ' + message + ':' 
                     },
                     json: true
                 };
@@ -997,7 +997,7 @@ app.post('/', function(req, response) {
             headers: headerBody,
             body: {
                 receiver: req.body.user.id,
-                min_api_version: 1,
+                min_api_version: 4,
                 tracking_data: 'tracking data',
                 type: 'text',
                 text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
