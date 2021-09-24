@@ -1067,7 +1067,7 @@ app.post('/', function(req, response) {
                     {
                         "Columns":6,
                         "Rows":2,
-                        "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)</font><font color=#6fc133>P450.00</font>",
+                        "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)          </font><font color=#6fc133>P450.00</font>",
                         "ActionType":"open-url",
                         "ActionBody":"http://executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
                         "TextSize":"medium",
