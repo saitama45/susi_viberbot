@@ -148,12 +148,12 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 3,
+                            min_api_version: 4,
+                            type: 'keyboard',
+                            keyboard: {
+                                Type: "keyboard",
+                                // ButtonsGroupColumns: 6,
+                                // ButtonsGroupRows: 3,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
