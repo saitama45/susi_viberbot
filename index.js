@@ -87,126 +87,88 @@ app.post('/', function(req, response) {
         var message = req.body.message.text;
 
         if(message.indexOf("https://") !== -1){}
-        else if(message === "Get started"){
+        else if(message === "Get started"){          
 
-            var options = {
-                method: 'POST',
-                url: 'https://chatapi.viber.com/pa/send_message',
-                headers: headerBody,
-                body: {
-                    receiver: req.body.user.id,
-                    min_api_version: 4,
-                    tracking_data: 'tracking data',
-                    type: 'text',
-                    text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
-                    keyboard: {
-                        "Type": "keyboard",
-                        "DefaultHeight": true,
-                        "InputFieldState": "hidden",
-                        "Buttons": [
-                            {
-                                "ActionType": "reply",
-                                "ActionBody": "I Agree",
-                                "Text": "<font color=\"#494E67\">I Agree</font>",
-                                "BgColor": "#f7bb3f",
-                                "TextSize": "large"
-                            },
-                            {
-                                "ActionType": "open-url",
-                                "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
-                                "Text": "<font color=\"#494E67\">Terms of Use</font>",
-                                "BgColor": "#f7bb3f",
-                                "TextSize": "large"
-                            },
-                        ]
-                    }
-                },
-                json: true
-            };
-    
-            request(options, function(error, res, body) {
-                if (error) throw new Error(error);
-                console.log(body);
-            });
+            // setting options to request susi bot.
+            var options1 = {
+                method: 'GET',
+                url: 'http://api.susi.ai/susi/chat.json',
+                qs: {
+                    timezoneOffset: '-330',
+                    q: message
+                }
+            };            
 
-            // // setting options to request susi bot.
-            // var options1 = {
-            //     method: 'GET',
-            //     url: 'http://api.susi.ai/susi/chat.json',
-            //     qs: {
-            //         timezoneOffset: '-330',
-            //         q: message
-            //     }
-            // };
-
-            // // A request to the Susi bot
-            // request(options1, function(error1, response1, body1) {
-            //     if (error1) throw new Error(error1);
-            //     // answer fetched from susi
-            //     ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+            // A request to the Susi bot
+            request(options1, function(error1, response1, body1) {
+                if (error1) throw new Error(error1);
+                // answer fetched from susi
+                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
                 
-            //     var options = {
-            //         method: 'POST',
-            //         url: 'https://chatapi.viber.com/pa/send_message',
-            //         headers: headerBody,
-            //         body: {
-            //             receiver: req.body.sender.id,
-            //             min_api_version: 1,
-            //             tracking_data: 'tracking data',
-            //             type: 'text',
-            //             text: '\nHi ' + req.body.sender.name + '! Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
-            //         },
-            //         json: true
-            //     };
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 1,
+                        tracking_data: 'tracking data',
+                        type: 'text',
+                        text: '\nHi ' + req.body.sender.name + '! Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
+                    },
+                    json: true
+                };
 
-            //     // request to the chat api of viber.
-            //     request(options, function(error, res, body) {
-            //         if (error) throw new Error(error);                                
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);
 
-            //         var options2 = {
-            //             method: 'POST',
-            //             url: 'https://chatapi.viber.com/pa/send_message',
-            //             headers: headerBody,                        
-            //             body: {
-            //                 receiver: req.body.sender.id,
-            //                 min_api_version: 4,
-            //                 tracking_data: 'tracking data',
-            //                 type: 'text',
-            //                 keyboard: {                                
-            //                     "Type": "keyboard",                                
-            //                     "InputFieldState": "hidden",                                                                
-            //                     "Buttons": [{
-            //                         "Columns": 6,
-            //                         "Rows": 1,
-            //                         "Text": "<font color=#494E67><b>I Agree</b></font>",
-            //                         "ActionType": "reply",
-            //                         "ActionBody": "I Agree",
-            //                         "TextSize": "large",
-            //                         "TextVAlign": "middle",
-            //                         "TextHAlign": "middle",
-            //                         "BgColor": "#f7bb3f",
-            //                     },{
-            //                         "Columns": 6,
-            //                         "Rows": 1,
-            //                         "Text": "<font color=#494E67><b>Terms of Use</b></font>",
-            //                         "ActionType": "open-url",
-            //                         "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
-            //                         "TextSize": "large",
-            //                         "TextVAlign": "middle",
-            //                         "TextHAlign": "middle",
-            //                         "BgColor": "#f7bb3f",                        
-            //                     }]  
-            //                 }
-            //             },
-            //             json: true
-            //         };
+                    var buttons = [{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>I Agree</b></font>",
+                        "ActionType": "reply",
+                        "ActionBody": "I Agree",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 6,
+                        Rows: 1,
+                        Text: "<font color=#323232><b>Terms of Use</b></font>",
+                        "ActionType": "open-url",
+                        "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                ];
 
-            //         request(options2, function(error2, res2, body2) {
-            //             if (error) throw new Error(error);
-            //             console.log(body);
-            //         });
-            //     });
-            // });
+                    var options2 = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.sender.id,
+                            min_api_version: 2,
+                            type: 'rich_media',
+                            rich_media: {
+                                Type: "rich_media",
+                                ButtonsGroupColumns: 6,
+                                ButtonsGroupRows: 2,
+                                BgColor: "#FFFFFF",
+                                Buttons: buttons
+                            }
+                        },
+                        json: true
+                    };
+
+                    request(options2, function(error2, res2, body2) {
+                        if (error) throw new Error(error);
+                        console.log(body);
+                    });
+                });
+            });
         }
         else if(message === "I Agree"){
             // setting options to request susi bot.
