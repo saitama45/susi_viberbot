@@ -130,7 +130,8 @@ app.post('/', function(req, response) {
                         "ActionBody": "I Agree",
                         "TextSize": "large",
                         "TextVAlign": "middle",
-                        "TextHAlign": "middle"
+                        "TextHAlign": "middle",
+                        "BgColor": "#f7bb3f",
                     },{
                         Columns: 6,
                         Rows: 1,
@@ -139,7 +140,8 @@ app.post('/', function(req, response) {
                         "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
                         "TextSize": "large",
                         "TextVAlign": "middle",
-                        "TextHAlign": "middle"
+                        "TextHAlign": "middle",
+                        "BgColor": "#f7bb3f",                        
                     }];                    
 
                     var options2 = {
@@ -150,12 +152,10 @@ app.post('/', function(req, response) {
                             receiver: req.body.sender.id,
                             min_api_version: 4,
                             type: 'text',
-                            keyboard: {
+                            keyboard: {                                
                                 Type: "keyboard",
                                 DefaultHeight: true,
-                                InputFieldState: "hidden",                                
-                                BgColor: "#f7bb3f",
-                                TextSize: "large",
+                                InputFieldState: "hidden",                                                                
                                 Buttons: buttons
                             }
                         },
