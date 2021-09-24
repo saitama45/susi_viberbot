@@ -929,7 +929,7 @@ app.post('/', function(req, response) {
                     [
                     {
                         Columns: 6,
-                        Rows: 3,
+                        Rows: 1,
                         Text: "<font color=#323232><b>Frames</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Frames",
@@ -939,7 +939,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 2,
+                        Rows: 1,
                         Text: "<font color=#323232><b>Contact Lens</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Contact Lens",
@@ -949,7 +949,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 3,
+                        Rows: 1,
                         Text: "<font color=#323232><b>Solutions</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Solutions",
@@ -959,7 +959,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 2,
+                        Rows: 1,
                         Text: "<font color=#323232><b>Sunglass</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Sunglass",
@@ -969,7 +969,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 2,
+                        Rows: 1,
                         Text: "<font color=#323232><b>Complete Eyeglass</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Complete Eyeglass",
@@ -979,7 +979,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         Columns: 6,
-                        Rows: 2,
+                        Rows: 1,
                         Text: "<font color=#323232><b>Accessories</b></font>", 
                         "ActionType":"reply",                       
                         "ActionBody": "Accessories",
@@ -1000,7 +1000,7 @@ app.post('/', function(req, response) {
                             rich_media: {
                                 Type: "rich_media",
                                 ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 7,
+                                ButtonsGroupRows: 2,
                                 BgColor: "#87CEFA",
                                 Buttons: buttons
                             }
