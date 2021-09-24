@@ -636,26 +636,26 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Vista Mall Las Pinas",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 3,
-                        Text: "<font color=#323232><b>Load More</b></font>", 
-                        "ActionType": "reply",
-                        "ActionBody": "Load More 2",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Vista Mall Las Pinas</b></font><font color=#777777><br>Ground Flr. Vista Mall Las Pinas CV Starr Ave., Las Pinas Metro Manila</font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Vista Mall Las Pinas",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
+                    // {
+                    //     Columns: 6,
+                    //     Rows: 3,
+                    //     Text: "<font color=#323232><b>Load More</b></font>", 
+                    //     "ActionType": "reply",
+                    //     "ActionBody": "Load More 2",
+                    //     "TextSize": "large",
+                    //     "TextVAlign": "middle",
+                    //     "TextHAlign": "middle"
+                    // },
                 ];
 
                     var options2 = {
