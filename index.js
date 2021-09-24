@@ -132,8 +132,7 @@ app.post('/', function(req, response) {
                             tracking_data: 'tracking data',
                             type: 'text',
                             keyboard: {                                
-                                "Type": "keyboard",
-                                "DefaultHeight": true,
+                                "Type": "keyboard",                                
                                 "InputFieldState": "hidden",                                                                
                                 "Buttons": [{
                                     "Columns": 6,
