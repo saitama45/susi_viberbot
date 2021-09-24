@@ -446,7 +446,9 @@ app.post('/', function(req, response) {
                     {
                         Columns: 6,
                         Rows: 3,
-                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg"
+                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg",
+                        "ActionType":"open-url",
+                        "ActionBody":"https://www.google.com",
                     },
                     {
                         Columns: 6,
