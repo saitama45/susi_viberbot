@@ -1219,12 +1219,12 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 4,
+                            min_api_version: 7,
                             type: 'rich_media',
                             rich_media: {
                                 Type: "rich_media",
                                 ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 6,
+                                ButtonsGroupRows: 7,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons                                
                             }
