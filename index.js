@@ -1181,14 +1181,14 @@ app.post('/', function(req, response) {
                         "TextVAlign":"middle",
                         "TextHAlign":"middle"
                     },     
-                    {
-                        "Columns":6,
-                        "Rows":3,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
-                        "Image":"http://www.executiveoptical.com/images/products/1744700000078.jpg"
-                    },
+                    // {
+                    //     "Columns":6,
+                    //     "Rows":3,
+                    //     "Silent": true,
+                    //     "ActionType":"open-url",
+                    //     "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
+                    //     "Image":"http://www.executiveoptical.com/images/products/1744700000078.jpg"
+                    // },
                     // {
                     //     "Columns":6,
                     //     "Rows":2,
