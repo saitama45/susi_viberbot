@@ -1021,190 +1021,190 @@ app.post('/', function(req, response) {
             });
         }
 
-        else if(message === "Contact Lens"){
-            // setting options to request susi bot.
-            var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
-            };
+        // else if(message === "Contact Lens"){
+        //     // setting options to request susi bot.
+        //     var options1 = {
+        //         method: 'GET',
+        //         url: 'http://api.susi.ai/susi/chat.json',
+        //         qs: {
+        //             timezoneOffset: '-330',
+        //             q: message
+        //         }
+        //     };
 
-            // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
-                if (error1) throw new Error(error1);
-                // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+        //     // A request to the Susi bot
+        //     request(options1, function(error1, response1, body1) {
+        //         if (error1) throw new Error(error1);
+        //         // answer fetched from susi
+        //         ans = (JSON.parse(body1)).answers[0].actions[0].expression;
                 
-                var options = {
-                    method: 'POST',
-                    url: 'https://chatapi.viber.com/pa/send_message',
-                    headers: headerBody,
-                    body: {
-                        receiver: req.body.sender.id,
-                        min_api_version: 1,
-                        tracking_data: 'tracking data',
-                        type: 'text',
-                        text: 'Here are our ' + message + ' products for you to choose from:' 
-                    },
-                    json: true
-                };
+        //         var options = {
+        //             method: 'POST',
+        //             url: 'https://chatapi.viber.com/pa/send_message',
+        //             headers: headerBody,
+        //             body: {
+        //                 receiver: req.body.sender.id,
+        //                 min_api_version: 1,
+        //                 tracking_data: 'tracking data',
+        //                 type: 'text',
+        //                 text: 'Here are our ' + message + ' products for you to choose from:' 
+        //             },
+        //             json: true
+        //         };
 
-                // request to the chat api of viber.
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
+        //         // request to the chat api of viber.
+        //         request(options, function(error, res, body) {
+        //             if (error) throw new Error(error);
 
-                    var buttons = 
-                    [
-                    {
-                        "Columns":6,
-                        "Rows":3,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
-                        "Image":"http://www.executiveoptical.com/images/products/1743700000001.jpg"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":2,
-                        "Silent": true,
-                        "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)</font>",
-                        "ActionType":"open-url",
-                        "ActionBody":"http://executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"left"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":3,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
-                        "Text":"<font color=#ffffff><b>Buy Now for P450.00</b></font>",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"middle",                        
-                    },                    
-                    {
-                        "Columns":6,
-                        "Rows":3,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
-                        "Image":"http://www.executiveoptical.com/images/products/1744600000126.jpg"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":2,
-                        "Silent": true,
-                        "Text":"<font color=#323232><b>FLEXWEAR ENHANCE</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"left"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":1,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
-                        "Text":"<font color=#ffffff><b>Buy Now for P480.00</b></font>",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"middle",                        
-                    },                    
-                    {
-                        "Columns":6,
-                        "Rows":3,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
-                        "Image":"http://www.executiveoptical.com/images/products/1744200000030.jpg"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":2,
-                        "Silent": true,
-                        "Text":"<font color=#323232><b>FLEXWEAR ILLUSIONS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"left"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":1,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
-                        "Text":"<font color=#ffffff><b>Buy Now for P590.00</b></font>",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"middle",                        
-                    },                     
-                    {
-                        "Columns":6,
-                        "Rows":3,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
-                        "Image":"http://www.executiveoptical.com/images/products/1744700000078.jpg"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":2,
-                        "Silent": true,
-                        "Text":"<font color=#323232><b>FLEXWEAR EMOTIONS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"left"
-                    },
-                    {
-                        "Columns":6,
-                        "Rows":1,
-                        "Silent": true,
-                        "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
-                        "Text":"<font color=#ffffff><b>Buy Now for P630.00</b></font>",
-                        "TextSize":"medium",
-                        "TextVAlign":"middle",
-                        "TextHAlign":"middle",                        
-                    }                    
-                ];
+        //             var buttons = 
+        //             [
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":3,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
+        //                 "Image":"http://www.executiveoptical.com/images/products/1743700000001.jpg"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":2,
+        //                 "Silent": true,
+        //                 "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)</font>",
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"left"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":3,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
+        //                 "Text":"<font color=#ffffff><b>Buy Now for P450.00</b></font>",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"middle",                        
+        //             },                    
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":3,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+        //                 "Image":"http://www.executiveoptical.com/images/products/1744600000126.jpg"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":2,
+        //                 "Silent": true,
+        //                 "Text":"<font color=#323232><b>FLEXWEAR ENHANCE</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"left"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":1,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+        //                 "Text":"<font color=#ffffff><b>Buy Now for P480.00</b></font>",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"middle",                        
+        //             },                    
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":3,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
+        //                 "Image":"http://www.executiveoptical.com/images/products/1744200000030.jpg"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":2,
+        //                 "Silent": true,
+        //                 "Text":"<font color=#323232><b>FLEXWEAR ILLUSIONS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"left"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":1,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
+        //                 "Text":"<font color=#ffffff><b>Buy Now for P590.00</b></font>",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"middle",                        
+        //             },                     
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":3,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
+        //                 "Image":"http://www.executiveoptical.com/images/products/1744700000078.jpg"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":2,
+        //                 "Silent": true,
+        //                 "Text":"<font color=#323232><b>FLEXWEAR EMOTIONS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"left"
+        //             },
+        //             {
+        //                 "Columns":6,
+        //                 "Rows":1,
+        //                 "Silent": true,
+        //                 "ActionType":"open-url",
+        //                 "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
+        //                 "Text":"<font color=#ffffff><b>Buy Now for P630.00</b></font>",
+        //                 "TextSize":"medium",
+        //                 "TextVAlign":"middle",
+        //                 "TextHAlign":"middle",                        
+        //             }                    
+        //         ];
 
-                    var options2 = {
-                        method: 'POST',
-                        url: 'https://chatapi.viber.com/pa/send_message',
-                        headers: headerBody,
-                        body: {
-                            receiver: req.body.sender.id,
-                            min_api_version: 7,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 7,
-                                BgColor: "#FFFFFF",
-                                Buttons: buttons                                
-                            }
-                        },
-                        json: true
-                    };     
-                    request(options2, function(error2, res2, body2) {
-                        if (error) throw new Error(error);
-                        console.log(body);
-                    });               
-                });
-            });
-        }
+        //             var options2 = {
+        //                 method: 'POST',
+        //                 url: 'https://chatapi.viber.com/pa/send_message',
+        //                 headers: headerBody,
+        //                 body: {
+        //                     receiver: req.body.sender.id,
+        //                     min_api_version: 7,
+        //                     type: 'rich_media',
+        //                     rich_media: {
+        //                         Type: "rich_media",
+        //                         ButtonsGroupColumns: 6,
+        //                         ButtonsGroupRows: 7,
+        //                         BgColor: "#FFFFFF",
+        //                         Buttons: buttons                                
+        //                     }
+        //                 },
+        //                 json: true
+        //             };     
+        //             request(options2, function(error2, res2, body2) {
+        //                 if (error) throw new Error(error);
+        //                 console.log(body);
+        //             });               
+        //         });
+        //     });
+        // }
         else{
             // setting options to request susi bot.
             var options1 = {
