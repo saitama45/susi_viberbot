@@ -1004,16 +1004,36 @@ app.post('/', function(req, response) {
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
                         body: {
-                            receiver: req.body.sender.id,
-                            min_api_version: 2,
+                            receiver: req.body.user.id,
+                            min_api_version: 4,
+                            tracking_data: 'tracking data',
                             type: 'text',
+                            text: 'Welcome to EO Viber Chatbot. Your most trusted vision care in the Philippines is very excited to serve your optical needs.',
                             keyboard: {
-                                Type: "keyboard",
-                                // ButtonsGroupColumns: 6,
-                                // ButtonsGroupRows: 2,
-                                BgColor: "#FFFFFF",
-                                Buttons: buttons
-                            }
+                                "Type": "keyboard",
+                                "DefaultHeight": true,
+                                "InputFieldState": "hidden",
+                                "Buttons": [{
+                                    "ActionType": "reply",
+                                    "ActionBody": "Get started",
+                                    "Text": "<font color=\"#494E67\">Get started</font>",
+                                    "BgColor": "#f7bb3f",
+                                    "TextSize": "large"
+                                }]
+                            },
+                            
+                        // body: {
+                        //     receiver: req.body.sender.id,
+                        //     min_api_version: 2,
+                        //     type: 'text',
+                        //     keyboard: {
+                        //         Type: "keyboard",
+                        //         // ButtonsGroupColumns: 6,
+                        //         // ButtonsGroupRows: 2,
+                        //         BgColor: "#FFFFFF",
+                        //         Buttons: buttons
+                        //     }
+
                         },
                         json: true
                     };     
