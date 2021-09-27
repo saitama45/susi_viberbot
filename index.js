@@ -894,9 +894,8 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Products" || message === "products" || message === "Product" || message === "products"){           
-
-            //setting options to request susi bot.
+        else if(message === "Products"){
+            // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
                 url: 'http://api.susi.ai/susi/chat.json',
@@ -905,7 +904,6 @@ app.post('/', function(req, response) {
                     q: message
                 }
             };
-
             // A request to the Susi bot
             request(options1, function(error1, response1, body1) {
                 if (error1) throw new Error(error1);
@@ -918,18 +916,16 @@ app.post('/', function(req, response) {
                     headers: headerBody,
                     body: {
                         receiver: req.body.sender.id,
-                        min_api_version: 7,
+                        min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
                         text: 'We have a special variety of products for you. You can choose what categories you may want to explore.' 
                     },
                     json: true
                 };
-
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
                     if (error) throw new Error(error);
-
                     var buttons = 
                     [
                     {
@@ -999,23 +995,21 @@ app.post('/', function(req, response) {
                         "TextHAlign": "middle"
                     }                    
                 ];
-
                     var options2 = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
-                        headers: headerBody,                        
+                        headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
+                            min_api_version: 7,
                             type: 'rich_media',
-                            keyboard: {
+                            rich_media: {
                                 Type: "rich_media",
                                 ButtonsGroupColumns: 6,
                                 ButtonsGroupRows: 2,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
-
                         },
                         json: true
                     };     
@@ -1026,6 +1020,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
+        
         else if(message === "Contact Lens"){
             // setting options to request susi bot.
             var options1 = {
