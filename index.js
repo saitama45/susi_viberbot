@@ -1082,12 +1082,23 @@ app.post('/', function(req, response) {
                         "Rows":3,
                         "Silent": true,
                         "ActionType":"open-url",
-                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
-                        "Text":"<font color=#ffffff><b>Buy Now for P450.00</b></font>",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
+                        "Text":"<font color=#ffffff><b>More Details</b></font>",
                         "TextSize":"medium",
                         "TextVAlign":"middle",
                         "TextHAlign":"middle",                        
-                    },                    
+                    },   
+                    {
+                        "Columns":6,
+                        "Rows":1,
+                        "Silent": true,
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
+                        "Text":"<font color=#ffffff><b>Buy Now for P630.00</b></font>",
+                        "TextSize":"medium",
+                        "TextVAlign":"middle",
+                        "TextHAlign":"middle",                        
+                    },                 
                     {
                         "Columns":6,
                         "Rows":3,
@@ -1106,6 +1117,17 @@ app.post('/', function(req, response) {
                         "TextSize":"medium",
                         "TextVAlign":"middle",
                         "TextHAlign":"left"
+                    },
+                    {
+                        "Columns":6,
+                        "Rows":3,
+                        "Silent": true,
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+                        "Text":"<font color=#ffffff><b>More Details</b></font>",
+                        "TextSize":"medium",
+                        "TextVAlign":"middle",
+                        "TextHAlign":"middle",                        
                     },
                     {
                         "Columns":6,
@@ -1136,6 +1158,17 @@ app.post('/', function(req, response) {
                         "TextSize":"medium",
                         "TextVAlign":"middle",
                         "TextHAlign":"left"
+                    },
+                    {
+                        "Columns":6,
+                        "Rows":3,
+                        "Silent": true,
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
+                        "Text":"<font color=#ffffff><b>More Details</b></font>",
+                        "TextSize":"medium",
+                        "TextVAlign":"middle",
+                        "TextHAlign":"middle",                        
                     },
                     {
                         "Columns":6,
@@ -1177,7 +1210,7 @@ app.post('/', function(req, response) {
                         "TextSize":"medium",
                         "TextVAlign":"middle",
                         "TextHAlign":"middle",                        
-                    }                    
+                    },                    
                 ];
 
                     var options2 = {
