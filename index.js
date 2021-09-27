@@ -496,7 +496,7 @@ app.post('/', function(req, response) {
                 });
             });            
         }
-        
+
         else if(message === "See More Manila"){
             // setting options to request susi bot.
             var options1 = {
@@ -894,7 +894,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Products"){
+        else if(message === "Products" || message === "products" || message === "Product" || message === "products"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -917,7 +917,7 @@ app.post('/', function(req, response) {
                     headers: headerBody,
                     body: {
                         receiver: req.body.sender.id,
-                        min_api_version: 1,
+                        min_api_version: 7,
                         tracking_data: 'tracking data',
                         type: 'text',
                         text: 'We have a special variety of products for you. You can choose what categories you may want to explore.' 
@@ -1006,11 +1006,11 @@ app.post('/', function(req, response) {
                         body: {
                             receiver: req.body.sender.id,
                             min_api_version: 7,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 2,
+                            type: 'text',
+                            keyboard: {
+                                Type: "keyboard",
+                                // ButtonsGroupColumns: 6,
+                                // ButtonsGroupRows: 2,
                                 BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
