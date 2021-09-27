@@ -1177,7 +1177,7 @@ app.post('/', function(req, response) {
                         "TextSize":"medium",
                         "TextVAlign":"middle",
                         "TextHAlign":"middle",                        
-                    },
+                    }
                 ];
 
                     var options2 = {
