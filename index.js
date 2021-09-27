@@ -1094,7 +1094,7 @@ app.post('/', function(req, response) {
                     Silent: true,
                     "ActionType":"open-url",
                     "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
-                    "Text":"<font color=#8367db>Buy Now for P450.00</font>",
+                    "Text":"<font color=#8367db><b>Buy Now for P450.00</b></font>",
                     "TextSize":"small",
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
@@ -1136,7 +1136,7 @@ app.post('/', function(req, response) {
                     Silent: true,
                     "ActionType":"open-url",
                     "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
-                    "Text":"<font color=#8367db>Buy Now for P480.00</font>",
+                    "Text":"<font color=#8367db><b>Buy Now for P480.00</b></font>",
                     "TextSize":"small",
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
@@ -1178,7 +1178,7 @@ app.post('/', function(req, response) {
                     Silent: true,
                     "ActionType":"open-url",
                     "ActionBody":"http://www.executiveoptical.com/Product/Select/1744200000030/Contact%20Lens",
-                    "Text":"<font color=#8367db>Buy Now for P590.00</font>",
+                    "Text":"<font color=#8367db><b>Buy Now for P590.00</b></font>",
                     "TextSize":"small",
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
@@ -1221,7 +1221,49 @@ app.post('/', function(req, response) {
                     Silent: true,
                     "ActionType":"open-url",
                     "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
-                    "Text":"<font color=#8367db>Buy Now for P6300.00</font>",
+                    "Text":"<font color=#8367db><b>Buy Now for P630.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },
+
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/1742000000123/Contact%20Lens",
+                    "Image":"http://www.executiveoptical.com/images/products/1742000000123.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>FLEXWEAR VISION</b></font><font color=#777777><br>3 PAIRS CLEAR CONTACT LENSES (BC: 8.6 , DIA: 14.2)</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/1742000000123/Contact%20Lens",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/1742000000123/Contact%20Lens",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/1742000000123/Contact%20Lens",
+                    "Text":"<font color=#8367db><b>Buy Now for P650.00</b></font>",
                     "TextSize":"small",
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
