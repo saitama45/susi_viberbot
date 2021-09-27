@@ -894,7 +894,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Products"){
+        else if(message === "Products" || message === "Product" || message === "products" || message === "product"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -1020,7 +1020,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        
+
         else if(message === "Contact Lens"){
             // setting options to request susi bot.
             var options1 = {
