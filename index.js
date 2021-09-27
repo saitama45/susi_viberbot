@@ -896,7 +896,7 @@ app.post('/', function(req, response) {
         }
         else if(message === "Products" || message === "products" || message === "Product" || message === "products"){           
 
-            setting options to request susi bot.
+            //setting options to request susi bot.
             var options1 = {
                 method: 'GET',
                 url: 'http://api.susi.ai/susi/chat.json',
