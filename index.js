@@ -1062,13 +1062,13 @@ app.post('/', function(req, response) {
                         "Columns":6,
                         "Rows":3,
                         "ActionType":"open-url",
-                        "ActionBody":"https://www.google.com",
-                        "Image":"http://html-test:8080/myweb/guy/assets/imageRMsmall2.png"
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
+                        "Image":"http://www.executiveoptical.com/images/products/1743700000001.jpg"
                     },
                     {
                         "Columns":6,
                         "Rows":2,
-                        "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)          </font><font color=#6fc133>P450.00</font>",
+                        "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)</font>",
                         "ActionType":"open-url",
                         "ActionBody":"http://executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
                         "TextSize":"medium",
@@ -1078,21 +1078,20 @@ app.post('/', function(req, response) {
                     {
                         "Columns":6,
                         "Rows":1,
-                        "ActionType":"reply",
-                        "ActionBody":"https://www.google.com",
-                        "Text":"<font color=#ffffff>Buy</font>",
-                        "TextSize":"large",
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
+                        "Text":"<font color=#ffffff><b>P450.00</b></font>",
+                        "TextSize":"medium",
                         "TextVAlign":"middle",
-                        "TextHAlign":"middle",
-                        "Image":"https://s14.postimg.org/4mmt4rw1t/Button.png"
+                        "TextHAlign":"middle",                        
                     },
                     {
                         "Columns":6,
                         "Rows":1,
-                        "ActionType":"reply",
-                        "ActionBody":"https://www.google.com",
-                        "Text":"<font color=#8367db>MORE DETAILS</font>",
-                        "TextSize":"small",
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
+                        "Text":"<font color=#8367db><b>Buy</b></font>",
+                        "TextSize":"large",
                         "TextVAlign":"middle",
                         "TextHAlign":"middle"
                     },
@@ -1100,15 +1099,15 @@ app.post('/', function(req, response) {
                         "Columns":6,
                         "Rows":3,
                         "ActionType":"open-url",
-                        "ActionBody":"https://www.google.com",
-                        "Image":"https://s16.postimg.org/wi8jx20wl/image_RMsmall2.png"
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+                        "Image":"http://www.executiveoptical.com/images/products/1744600000126.jpg"
                     },
                     {
                         "Columns":6,
                         "Rows":2,
-                        "Text":"<font color=#323232><b>Hanes Men's Humor Graphic T-Shirt</b></font><font color=#777777><br>Hanes</font><font color=#6fc133>$10.99</font>",
+                        "Text":"<font color=#323232><b>FLEXWEAR ENHANCE</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
                         "ActionType":"open-url",
-                        "ActionBody":"https://www.google.com",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
                         "TextSize":"medium",
                         "TextVAlign":"middle",
                         "TextHAlign":"left"
@@ -1116,21 +1115,20 @@ app.post('/', function(req, response) {
                     {
                         "Columns":6,
                         "Rows":1,
-                        "ActionType":"reply",
-                        "ActionBody":"https://www.google.com",
-                        "Text":"<font color=#ffffff>Buy</font>",
-                        "TextSize":"large",
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+                        "Text":"<font color=#ffffff><b>P480.00</b></font>",
+                        "TextSize":"medium",
                         "TextVAlign":"middle",
-                        "TextHAlign":"middle",
-                        "Image":"https://s14.postimg.org/4mmt4rw1t/Button.png"
+                        "TextHAlign":"middle",                        
                     },
                     {
                         "Columns":6,
                         "Rows":1,
-                        "ActionType":"reply",
-                        "ActionBody":"https://www.google.com",
-                        "Text":"<font color=#8367db>MORE DETAILS</font>",
-                        "TextSize":"small",
+                        "ActionType":"open-url",
+                        "ActionBody":"http://www.executiveoptical.com/Product/Select/1744600000126/Contact%20Lens",
+                        "Text":"<font color=#8367db><b>Buy</b></font>",
+                        "TextSize":"large",
                         "TextVAlign":"middle",
                         "TextHAlign":"middle"
                     }                
