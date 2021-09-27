@@ -1213,7 +1213,7 @@ app.post('/', function(req, response) {
                     },
                     {
                         "Columns":6,
-                        "Rows":0,
+                        "Rows":1,
                         "Silent": true,
                         "ActionType":"open-url",
                         "ActionBody":"http://www.executiveoptical.com/Product/Select/1744700000078/Contact%20Lens",
