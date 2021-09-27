@@ -894,7 +894,7 @@ app.post('/', function(req, response) {
                 });
             });
         }
-        else if(message === "Products" || message === "Product" || message === "products" || message === "product"){
+        else if(message === "Products" || message === "Product" || message === "products" || message === "product" || message === "PRODUCT" || message === "PRODUCTS"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -1021,7 +1021,7 @@ app.post('/', function(req, response) {
             });
         }
 
-        else if(message === "Contact Lens"){
+        else if(message === "Contact Lens" || message === "contact lens" || message === "Contact lens" || message === "contact Lens" || message === "CONTACT LENS"){
             // setting options to request susi bot.
             var options1 = {
                 method: 'GET',
@@ -1306,6 +1306,323 @@ app.post('/', function(req, response) {
                     "ActionType":"open-url",
                     "ActionBody":"http://www.executiveoptical.com/Product/Select/1723190000001/Contact%20Lens",
                     "Text":"<font color=#8367db><b>Buy Now for P690.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },
+                ];
+
+                    var options2 = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.sender.id,
+                            min_api_version: 7,
+                            type: 'rich_media',
+                            rich_media: {
+                                Type: "rich_media",
+                                ButtonsGroupColumns: 6,
+                                ButtonsGroupRows: 7,
+                                BgColor: "#FFFFFF",
+                                Buttons: buttons                                
+                            }
+                        },
+                        json: true
+                    };     
+                    request(options2, function(error2, res2, body2) {
+                        if (error) throw new Error(error);
+                        console.log(body);
+                    });               
+                });
+            });
+        }
+
+        else if(message === "Solutions" || message === "Solution" || message === "solutions" || message === "solution" || message === "SOLUTIONS" || message === "SOLUTION"){
+            // setting options to request susi bot.
+            var options1 = {
+                method: 'GET',
+                url: 'http://api.susi.ai/susi/chat.json',
+                qs: {
+                    timezoneOffset: '-330',
+                    q: message
+                }
+            };
+
+            // A request to the Susi bot
+            request(options1, function(error1, response1, body1) {
+                if (error1) throw new Error(error1);
+                // answer fetched from susi
+                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+                
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 1,
+                        tracking_data: 'tracking data',
+                        type: 'text',
+                        text: 'Here are our ' + message + ' products for you to choose from:' 
+                    },
+                    json: true
+                };
+
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);
+
+                    var buttons = 
+                    [
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000002/Solutions",
+                    "Image":"http://www.executiveoptical.com/images/products/0800800000002.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>EO NEO PLUS SOLUTION</b></font><font color=#777777><br>Multi-Purpose Solution with FREE CL Case</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000002/Solutions",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000002/Solutions",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000002/Solutions",
+                    "Text":"<font color=#8367db><b>Buy Now for P99.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },
+
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0823290000002/Solutions",
+                    "Image":"http://www.executiveoptical.com/images/products/0823290000002.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>EO FLEXWEAR SOLUTION</b></font><font color=#777777><br>All-in-1 Solution with FREE CL Case</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0823290000002/Solutions",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0823290000002/Solutions",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0823290000002/Solutions",
+                    "Text":"<font color=#8367db><b>Buy Now for P99.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },  
+                    
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000007/Solutions",
+                    "Image":"http://www.executiveoptical.com/images/products/0829640000007.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>EO VISUALITIES LUBRICATING EYE DROPS</b></font><font color=#777777><br>Artificial Tears Formula</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000007/Solutions",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000007/Solutions",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000007/Solutions",
+                    "Text":"<font color=#8367db><b>Buy Now for P135.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },
+                    
+                    
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/4809011752023/Solutions",
+                    "Image":"http://www.executiveoptical.com/images/products/4809011752023.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>EO LENSCARE</b></font><font color=#777777><br>Multi-Purpose Solution</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/4809011752023/Solutions",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/4809011752023/Solutions",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/4809011752023/Solutions",
+                    "Text":"<font color=#8367db><b>Buy Now for P135.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },
+
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000005/Solutions",
+                    "Image":"http://www.executiveoptical.com/images/products/0829640000005.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>EO VISUALITIES MPS AIO ARTIFICIAL TEARS FORMULA</b></font><font color=#777777><br>Multi-Purpose Solution with FREE CL Case</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000005/Solutions",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000005/Solutions",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0829640000005/Solutions",
+                    "Text":"<font color=#8367db><b>Buy Now for P195.00</b></font>",
+                    "TextSize":"small",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle"
+                    },
+
+                    {
+                    "Columns":6,
+                    "Rows":3,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000001/Solutions",
+                    "Image":"http://www.executiveoptical.com/images/products/0800800000001.jpg"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":2,
+                    Silent: true,
+                    "Text":"<font color=#323232><b>NEO NEO PLUS SOLUTION</b></font><font color=#777777><br>Multi-Purpose Solution with FREE CL Case</font>",
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000001/Solutions",
+                    "TextSize":"medium",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"left"
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000001/Solutions",
+                    "Text":"<font color=#ffffff>More Details</font>",
+                    "TextSize":"large",
+                    "TextVAlign":"middle",
+                    "TextHAlign":"middle",                        
+                    },
+                    {
+                    "Columns":6,
+                    "Rows":1,
+                    Silent: true,
+                    "ActionType":"open-url",
+                    "ActionBody":"http://www.executiveoptical.com/Product/Select/0800800000001/Solutions",
+                    "Text":"<font color=#8367db><b>Buy Now for P199.00</b></font>",
                     "TextSize":"small",
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
