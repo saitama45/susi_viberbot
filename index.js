@@ -1059,7 +1059,7 @@ app.post('/', function(req, response) {
                     var buttons = 
                     [
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":3,
                         "Silent": true,
                         "ActionType":"open-url",
@@ -1067,7 +1067,7 @@ app.post('/', function(req, response) {
                         "Image":"http://www.executiveoptical.com/images/products/1743700000001.jpg"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":2,
                         "Silent": true,
                         "Text":"<font color=#323232><b>FLEXWEAR COLORS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)</font>",
@@ -1078,8 +1078,8 @@ app.post('/', function(req, response) {
                         "TextHAlign":"left"
                     },
                     {
-                        "Columns":5,
-                        "Rows":1,
+                        "Columns":6,
+                        "Rows":3,
                         "Silent": true,
                         "ActionType":"open-url",
                         "ActionBody":"http://www.executiveoptical.com/Product/Select/1743700000001/Contact%20Lens",
@@ -1089,7 +1089,7 @@ app.post('/', function(req, response) {
                         "TextHAlign":"middle",                        
                     },                    
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":3,
                         "Silent": true,
                         "ActionType":"open-url",
@@ -1097,7 +1097,7 @@ app.post('/', function(req, response) {
                         "Image":"http://www.executiveoptical.com/images/products/1744600000126.jpg"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":2,
                         "Silent": true,
                         "Text":"<font color=#323232><b>FLEXWEAR ENHANCE</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
@@ -1108,7 +1108,7 @@ app.post('/', function(req, response) {
                         "TextHAlign":"left"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":1,
                         "Silent": true,
                         "ActionType":"open-url",
@@ -1119,7 +1119,7 @@ app.post('/', function(req, response) {
                         "TextHAlign":"middle",                        
                     },                    
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":3,
                         "Silent": true,
                         "ActionType":"open-url",
@@ -1127,7 +1127,7 @@ app.post('/', function(req, response) {
                         "Image":"http://www.executiveoptical.com/images/products/1744200000030.jpg"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":2,
                         "Silent": true,
                         "Text":"<font color=#323232><b>FLEXWEAR ILLUSIONS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
@@ -1138,7 +1138,7 @@ app.post('/', function(req, response) {
                         "TextHAlign":"left"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":1,
                         "Silent": true,
                         "ActionType":"open-url",
@@ -1149,7 +1149,7 @@ app.post('/', function(req, response) {
                         "TextHAlign":"middle",                        
                     },                     
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":3,
                         "Silent": true,
                         "ActionType":"open-url",
@@ -1157,7 +1157,7 @@ app.post('/', function(req, response) {
                         "Image":"http://www.executiveoptical.com/images/products/1744700000078.jpg"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":2,
                         "Silent": true,
                         "Text":"<font color=#323232><b>FLEXWEAR EMOTIONS</b></font><font color=#777777><br>1 PAIR COLORED CONTACT LENSES (BC: 8.6 , DIA: 14.00)",
@@ -1168,7 +1168,7 @@ app.post('/', function(req, response) {
                         "TextHAlign":"left"
                     },
                     {
-                        "Columns":5,
+                        "Columns":6,
                         "Rows":1,
                         "Silent": true,
                         "ActionType":"open-url",
