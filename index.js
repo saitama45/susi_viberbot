@@ -30,7 +30,7 @@ app.get('/', function(req, response) {
     response.writeHead(200, {
         'content-type': 'text/plain'
     });
-    response.write("To chat with Susi through Viber, visit this link - chats.viber.com/chatauto and click on the 'Have a look' button\n\n");
+    response.write("To chat with EO Bot through Viber, visit this link and click - viber://pa?chatURI=EOSAMP\n\n");
     // setting options to request the chat api of viber.
     var options = {
         method: 'POST',
@@ -250,13 +250,15 @@ app.post('/', function(req, response) {
                         headers: headerBody,
                         body: {
                             receiver: req.body.sender.id,
-                            min_api_version: 2,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 2,
-                                BgColor: "#FFFFFF",
+                            // min_api_version: 2,
+                            // type: 'rich_media',
+                            text: 'this is keyboard',
+                            keyboard: {
+                                Type: "keyboard",
+                                "DefaultHeight": true,
+                                // ButtonsGroupColumns: 6,
+                                // ButtonsGroupRows: 2,
+                                // BgColor: "#FFFFFF",
                                 Buttons: buttons
                             }
                         },
