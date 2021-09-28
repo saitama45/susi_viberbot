@@ -189,7 +189,7 @@ app.post('/', function(req, response) {
                 ans = (JSON.parse(body1)).answers[0].actions[0].expression;
                 
                 var buttons = [{
-                    Columns: 6,
+                    Columns: 3,
                     Rows: 2,
                     Text: "<font color=#323232><b>Branches</b></font>",
                     "ActionType": "reply",
@@ -198,7 +198,7 @@ app.post('/', function(req, response) {
                     "TextVAlign": "middle",
                     "TextHAlign": "middle"
                 },{
-                    Columns: 6,
+                    Columns: 3,
                     Rows: 2,
                     Text: "<font color=#323232><b>Products</b></font>",
                     "ActionType": "reply",
@@ -207,7 +207,7 @@ app.post('/', function(req, response) {
                     "TextVAlign": "middle",
                     "TextHAlign": "middle"
                 },{
-                    Columns: 6,
+                    Columns: 3,
                     Rows: 2,
                     Text: "<font color=#323232><b>Services</b></font>",
                     "ActionType": "reply",
@@ -216,7 +216,7 @@ app.post('/', function(req, response) {
                     "TextVAlign": "middle",
                     "TextHAlign": "middle"
                 },{
-                    Columns: 6,
+                    Columns: 3,
                     Rows: 2,
                     Text: "<font color=#323232><b>Contact Us</b></font>",
                     "ActionType": "open-url",
