@@ -197,7 +197,19 @@ app.post('/', function(req, response) {
                         min_api_version: 1,
                         tracking_data: 'tracking data',
                         type: 'text',
-                        text: '\nHow can we help you? You may choose from the options below to continue.'
+                        text: '\nHow can we help you? You may choose from the options below to continue.',
+                        keyboard: {
+                            "Type": "keyboard",
+                            "DefaultHeight": true,
+                            "InputFieldState": "hidden",
+                            "Buttons": [{
+                                "ActionType": "reply",
+                                "ActionBody": "Get started",
+                                "Text": "<font color=\"#494E67\">Get started</font>",
+                                "BgColor": "#f7bb3f",
+                                "TextSize": "large"
+                            }]
+                        }
                     },
                     json: true
                 };
