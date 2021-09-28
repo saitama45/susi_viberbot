@@ -106,6 +106,7 @@ app.post('/', function(req, response) {
                 Columns: 3,
                 Rows: 1,
                 BgColor: "#87CEFA",
+                Silent: true,
                 Text: "<b>Terms of Use</b>",
                 "ActionType": "open-url",
                 "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
@@ -215,52 +216,139 @@ app.post('/', function(req, response) {
         }
 
         else if(message === "Branches"){
-            // setting options to request susi bot.
-            var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
+
+            var buttons = [{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Branches</b>",
+                "ActionType": "reply",
+                "ActionBody": "Branches",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Products</b>",
+                "ActionType": "reply",
+                "ActionBody": "Products",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Services</b>",
+                "ActionType": "reply",
+                "ActionBody": "Services",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Silent: true,
+                Text: "<b>Contact Us</b>",
+                "ActionType": "open-url",
+                "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            }];
+
+            var options = {
+                method: 'POST',
+                url: 'https://chatapi.viber.com/pa/send_message',
+                headers: headerBody,
+                body: {
+                    receiver: req.body.sender.id,
+                    min_api_version: 7,
+                    tracking_data: 'tracking data',
+                    type: 'text',
+                    text: 'Type the City you wish to check so that I can send the list of stores we have in that area.',
+                    keyboard: {
+                        "Type": "keyboard",
+                        "DefaultHeight": true,                                            
+                        "Buttons": buttons
+                    }
+                },
+                json: true
             };
 
-            // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
-                if (error1) throw new Error(error1);
-                // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;                
-                
-                var options = {
-                    method: 'POST',
-                    url: 'https://chatapi.viber.com/pa/send_message',
-                    headers: headerBody,
-                    body: {
-                        receiver: req.body.sender.id,
-                        min_api_version: 1,
-                        tracking_data: 'tracking data',
-                        type: 'text',
-                        text: 'Type the City you wish to check so that I can send the list of stores we have in that area.'
-                    },
-                    json: true
-                };
-
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
-                    console.log(body);
-                });                
-            });            
+            // request to the chat api of viber.
+            request(options, function(error, res, body) {
+                if (error) throw new Error(error);                    
+                console.log(body);
+            });
+                                              
         }
         
         else if(message === "Manila" || message === "manila" || message === "metro manila" || message === "Metro Manila" || message === "metro Manila" || message === "Metro manila"){
             // setting options to request susi bot.
+            var buttons = [{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Branches</b>",
+                "ActionType": "reply",
+                "ActionBody": "Branches",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Products</b>",
+                "ActionType": "reply",
+                "ActionBody": "Products",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Services</b>",
+                "ActionType": "reply",
+                "ActionBody": "Services",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Silent: true,
+                Text: "<b>Contact Us</b>",
+                "ActionType": "open-url",
+                "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            }];
+            
             var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
+                method: 'POST',
+                url: 'https://chatapi.viber.com/pa/send_message',
+                headers: headerBody,
+                body: {
+                    receiver: req.body.sender.id,
+                    min_api_version: 7,
+                    tracking_data: 'tracking data',
+                    type: 'text',
+                    text: 'Here are the list of Stores we have in ' + message + ':',
+                    keyboard: {
+                        "Type": "keyboard",
+                        "DefaultHeight": true,                                            
+                        "Buttons": buttons
+                    }
+                },
+                json: true
             };
 
             // A request to the Susi bot
@@ -277,8 +365,8 @@ app.post('/', function(req, response) {
                         receiver: req.body.sender.id,
                         min_api_version: 1,
                         tracking_data: 'tracking data',
-                        type: 'text',
-                        text: 'Here are the list of Stores we have in ' + message + ':' 
+                        // type: 'text',
+                        // text: 'Here are the list of Stores we have in ' + message + ':' 
                     },
                     json: true
                 };
