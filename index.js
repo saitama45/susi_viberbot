@@ -174,8 +174,9 @@ app.post('/', function(req, response) {
         else if(message === "I Agree"){
 
             var buttons = [{
-                Columns: 2,
+                Columns: 3,
                 Rows: 2,
+                BgColor: "#87CEFA",
                 Text: "<b>Branches</b>",
                 "ActionType": "reply",
                 "ActionBody": "Branches",
@@ -183,8 +184,9 @@ app.post('/', function(req, response) {
                 "TextVAlign": "middle",
                 "TextHAlign": "middle"
             },{
-                Columns: 2,
+                Columns: 3,
                 Rows: 2,
+                BgColor: "#87CEFA",
                 Text: "<b>Products</b>",
                 "ActionType": "reply",
                 "ActionBody": "Products",
@@ -192,8 +194,9 @@ app.post('/', function(req, response) {
                 "TextVAlign": "middle",
                 "TextHAlign": "middle"
             },{
-                Columns: 2,
+                Columns: 3,
                 Rows: 2,
+                BgColor: "#87CEFA",
                 Text: "<b>Services</b>",
                 "ActionType": "reply",
                 "ActionBody": "Services",
@@ -201,8 +204,9 @@ app.post('/', function(req, response) {
                 "TextVAlign": "middle",
                 "TextHAlign": "middle"
             },{
-                Columns: 2,
+                Columns: 3,
                 Rows: 2,
+                BgColor: "#87CEFA",
                 Text: "<b>Contact Us</b>",
                 "ActionType": "open-url",
                 "ActionBody": "http://www.executiveoptical.com/ContactUs",
@@ -224,8 +228,7 @@ app.post('/', function(req, response) {
                     keyboard: {
                         "Type": "keyboard",
                         "DefaultHeight": true,
-                        "InputFieldState": "hidden",
-                        "BgColor": "#87CEFA",
+                        "InputFieldState": "hidden",                        
                         "Buttons": buttons
                     }
                 },
