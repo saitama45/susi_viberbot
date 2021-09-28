@@ -188,6 +188,44 @@ app.post('/', function(req, response) {
                 // answer fetched from susi
                 ans = (JSON.parse(body1)).answers[0].actions[0].expression;
                 
+                var buttons = [{
+                    Columns: 6,
+                    Rows: 1,
+                    Text: "<font color=#323232><b>Branches</b></font>",
+                    "ActionType": "reply",
+                    "ActionBody": "Branches",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },{
+                    Columns: 6,
+                    Rows: 1,
+                    Text: "<font color=#323232><b>Products</b></font>",
+                    "ActionType": "reply",
+                    "ActionBody": "Products",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },{
+                    Columns: 6,
+                    Rows: 1,
+                    Text: "<font color=#323232><b>Services</b></font>",
+                    "ActionType": "reply",
+                    "ActionBody": "Services",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },{
+                    Columns: 6,
+                    Rows: 1,
+                    Text: "<font color=#323232><b>Contact Us</b></font>",
+                    "ActionType": "open-url",
+                    "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                }];
+
                 var options = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
@@ -210,45 +248,7 @@ app.post('/', function(req, response) {
 
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
-
-                    var buttons = [{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Branches</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Products</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Services</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Contact Us</b></font>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];
+                    if (error) throw new Error(error);                    
 
                     var options2 = {
                         method: 'POST',
