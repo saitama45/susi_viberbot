@@ -332,7 +332,7 @@ app.post('/', function(req, response) {
                 "TextHAlign": "middle"
             }];
             
-            var options1 = {
+            var options = {
                 method: 'POST',
                 url: 'https://chatapi.viber.com/pa/send_message',
                 headers: headerBody,
@@ -352,30 +352,10 @@ app.post('/', function(req, response) {
             };
 
             // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
-                if (error1) throw new Error(error1);
-                // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-                
-                var options = {
-                    method: 'POST',
-                    url: 'https://chatapi.viber.com/pa/send_message',
-                    headers: headerBody,
-                    body: {
-                        receiver: req.body.sender.id,
-                        min_api_version: 1,
-                        tracking_data: 'tracking data',
-                        // type: 'text',
-                        // text: 'Here are the list of Stores we have in ' + message + ':' 
-                    },
-                    json: true
-                };
+            request(options, function(error, res, body) {
+                if (error) throw new Error(error);                                
 
-                // request to the chat api of viber.
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
-
-                    var buttons = 
+                    var buttons1 = 
                     [
                     {
                         Columns: 6,
@@ -500,7 +480,7 @@ app.post('/', function(req, response) {
                         "TextVAlign": "middle",
                         "TextHAlign": "middle"
                     },                                                            
-                ];
+                    ];
 
                     var options2 = {
                         method: 'POST',
@@ -515,7 +495,7 @@ app.post('/', function(req, response) {
                                 ButtonsGroupColumns: 6,
                                 ButtonsGroupRows: 7,
                                 BgColor: "#FFFFFF",
-                                Buttons: buttons
+                                Buttons: buttons1
                             }
                         },
                         json: true
@@ -525,7 +505,7 @@ app.post('/', function(req, response) {
                         console.log(body);
                     });               
                 });
-            });            
+            };            
         }
 
         else if(message === "See More Manila"){
