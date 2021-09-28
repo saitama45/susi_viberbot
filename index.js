@@ -89,86 +89,57 @@ app.post('/', function(req, response) {
         if(message.indexOf("https://") !== -1){}
         else if(message === "Get started"){          
 
-            // setting options to request susi bot.
-            var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
-            };            
 
-            // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
-                if (error1) throw new Error(error1);
-                // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-                
-                var options = {
-                    method: 'POST',
-                    url: 'https://chatapi.viber.com/pa/send_message',
-                    headers: headerBody,
-                    body: {
-                        receiver: req.body.sender.id,
-                        min_api_version: 1,
-                        tracking_data: 'tracking data',
-                        type: 'text',
-                        text: 'Hi ' + req.body.sender.name + '! Thank you for getting started to chat with us. Please tap "I Agree" to continue.'
-                    },
-                    json: true
-                };
+            var buttons = [
+            {
+                Columns: 3,
+                Rows: 1,
+                BgColor: "#87CEFA",
+                Text: "<b>I Agree</b>",
+                "ActionType": "reply",
+                "ActionBody": "I Agree",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },
+            {
+                Columns: 3,
+                Rows: 1,
+                BgColor: "#87CEFA",
+                Text: "<b>Terms of Use</b>",
+                "ActionType": "open-url",
+                "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },            
+            ];
 
-                // request to the chat api of viber.
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
+            var options = {
+                method: 'POST',
+                url: 'https://chatapi.viber.com/pa/send_message',
+                headers: headerBody,
+                body: {
+                    receiver: req.body.sender.id,
+                    min_api_version: 7,
+                    tracking_data: 'tracking data',
+                    type: 'text',
+                    text: 'Hi ' + req.body.sender.name + '! Thank you for getting started to chat with us. Please tap "I Agree" to continue.',
+                    keyboard: {
+                        "Type": "keyboard",
+                        "DefaultHeight": true,
+                        "InputFieldState": "hidden",                        
+                        "Buttons": buttons
+                    }
+                },
+                json: true
+            };
 
-                    var buttons = [{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>I Agree</b></font>",
-                        "ActionType": "reply",
-                        "ActionBody": "I Agree",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 6,
-                        Rows: 1,
-                        Text: "<font color=#323232><b>Terms of Use</b></font>",
-                        "ActionType": "open-url",
-                        "ActionBody": "https://about.powermaccenter.com/privacy-policy/",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    ];
-
-                    var options2 = {
-                        method: 'POST',
-                        url: 'https://chatapi.viber.com/pa/send_message',
-                        headers: headerBody,
-                        body: {
-                            receiver: req.body.sender.id,
-                            min_api_version: 2,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 2,
-                                BgColor: "#FFFFFF",
-                                Buttons: buttons
-                            }
-                        },
-                        json: true
-                    };
-
-                    request(options2, function(error2, res2, body2) {
-                        if (error) throw new Error(error);
-                        console.log(body);
-                    });
-                });
-            });
+            // request to the chat api of viber.
+            request(options, function(error, res, body) {
+                if (error) throw new Error(error);                    
+                console.log(body);
+            });            
         }
 
         else if(message === "I Agree"){
