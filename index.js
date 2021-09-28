@@ -187,7 +187,7 @@ app.post('/', function(req, response) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
                 ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-
+                
                 var buttons = [{
                     Columns: 6,
                     Rows: 2,
@@ -232,7 +232,7 @@ app.post('/', function(req, response) {
                     headers: headerBody,
                     body: {
                         receiver: req.body.sender.id,
-                        min_api_version: 1,
+                        min_api_version: 7,
                         tracking_data: 'tracking data',
                         type: 'text',
                         text: '\nHow can we help you? You may choose from the options below to continue.',
@@ -244,7 +244,13 @@ app.post('/', function(req, response) {
                         }
                     },
                     json: true
-                };                
+                };
+
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);                    
+                    console.log(body);
+                });
             });
         }
 
