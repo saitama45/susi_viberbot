@@ -187,10 +187,10 @@ app.post('/', function(req, response) {
                 if (error1) throw new Error(error1);
                 // answer fetched from susi
                 ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-                
+
                 var buttons = [{
                     Columns: 6,
-                    Rows: 1,
+                    Rows: 2,
                     Text: "<font color=#323232><b>Branches</b></font>",
                     "ActionType": "reply",
                     "ActionBody": "Branches",
@@ -199,7 +199,7 @@ app.post('/', function(req, response) {
                     "TextHAlign": "middle"
                 },{
                     Columns: 6,
-                    Rows: 1,
+                    Rows: 2,
                     Text: "<font color=#323232><b>Products</b></font>",
                     "ActionType": "reply",
                     "ActionBody": "Products",
@@ -208,7 +208,7 @@ app.post('/', function(req, response) {
                     "TextHAlign": "middle"
                 },{
                     Columns: 6,
-                    Rows: 1,
+                    Rows: 2,
                     Text: "<font color=#323232><b>Services</b></font>",
                     "ActionType": "reply",
                     "ActionBody": "Services",
@@ -217,7 +217,7 @@ app.post('/', function(req, response) {
                     "TextHAlign": "middle"
                 },{
                     Columns: 6,
-                    Rows: 1,
+                    Rows: 2,
                     Text: "<font color=#323232><b>Contact Us</b></font>",
                     "ActionType": "open-url",
                     "ActionBody": "http://www.executiveoptical.com/ContactUs",
@@ -244,38 +244,7 @@ app.post('/', function(req, response) {
                         }
                     },
                     json: true
-                };
-
-                // request to the chat api of viber.
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-
-                    var options2 = {
-                        method: 'POST',
-                        url: 'https://chatapi.viber.com/pa/send_message',
-                        headers: headerBody,
-                        body: {
-                            receiver: req.body.sender.id,
-                            // min_api_version: 2,
-                            // type: 'rich_media',
-                            text: 'this is keyboard',
-                            keyboard: {
-                                Type: "keyboard",
-                                "DefaultHeight": true,
-                                // ButtonsGroupColumns: 6,
-                                // ButtonsGroupRows: 2,
-                                // BgColor: "#FFFFFF",
-                                Buttons: buttons
-                            }
-                        },
-                        json: true
-                    };
-
-                    request(options2, function(error2, res2, body2) {
-                        if (error) throw new Error(error);
-                        console.log(body);
-                    });
-                });
+                };                
             });
         }
 
