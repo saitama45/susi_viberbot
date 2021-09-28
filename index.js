@@ -353,9 +353,9 @@ app.post('/', function(req, response) {
 
             // A request to the Susi bot
             request(options, function(error, res, body) {
-                if (error) throw new Error(error);                                
-
-                    var buttons1 = 
+                if (error) throw new Error(error);  
+                 
+                var buttons1 = 
                     [
                     {
                         Columns: 6,
@@ -503,9 +503,8 @@ app.post('/', function(req, response) {
                     request(options2, function(error2, res2, body2) {
                         if (error) throw new Error(error);
                         console.log(body);
-                    });               
-                });
-            };            
+                    });
+            });                                                       
         }
 
         else if(message === "See More Manila"){
