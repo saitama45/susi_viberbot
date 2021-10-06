@@ -1059,7 +1059,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 2,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons2
                         }
                     },
                     json: true
