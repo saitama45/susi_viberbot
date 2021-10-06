@@ -960,8 +960,8 @@ app.post('/', function(req, response) {
                     receiver: req.body.sender.id,
                     min_api_version: 7,
                     tracking_data: 'tracking data',                   
-                    text: 'We have a special variety of products for you. You can choose what categories you may want to explore.',
-                    type: 'rich_media',
+                    type: 'text',
+                    text: 'We have a special variety of products for you. You can choose what categories you may want to explore.',                    
                     rich_media: {
                         Type: "rich_media",
                         ButtonsGroupColumns: 6,
