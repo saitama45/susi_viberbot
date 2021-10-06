@@ -399,51 +399,8 @@ app.post('/', function(req, response) {
         }
         
         else if(message === "Manila" || message === "manila" || message === "metro manila" || message === "Metro Manila" || message === "metro Manila" || message === "Metro manila"){
-            // setting options to request susi bot.
-            var buttons = [{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Branches</b>",
-                "ActionType": "reply",
-                "ActionBody": "Branches",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Products</b>",
-                "ActionType": "reply",
-                "ActionBody": "Products",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Services</b>",
-                "ActionType": "reply",
-                "ActionBody": "Services",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Silent: true,
-                Text: "<b>Contact Us</b>",
-                "ActionType": "open-url",
-                "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            }];
             
-            var options = {
+            var options1 = {
                 method: 'POST',
                 url: 'https://chatapi.viber.com/pa/send_message',
                 headers: headerBody,
@@ -453,170 +410,232 @@ app.post('/', function(req, response) {
                     tracking_data: 'tracking data',
                     type: 'text',
                     text: 'Here are the list of Stores we have in ' + message + ':',
-                    keyboard: {
-                        "Type": "keyboard",
-                        "DefaultHeight": true,                                            
-                        "Buttons": buttons
-                    }
                 },
                 json: true
             };
 
-            // A request to the Susi bot
-            request(options, function(error, res, body) {
-                if (error) throw new Error(error);  
-                console.log(body);                
-            });                   
-            
-            var buttons1 = 
-            [
-            {
-                Columns: 6,
-                Rows: 3,
-                Text: "<font color=#323232><b>SM Southmall</b></font><font color=#777777><br>SMS 1203 G/F SM Southmall, Las Pinas, Metro Manila</font>", 
-                "ActionType":"none",                       
-                "ActionBody": "SM Southmall",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 2,
-                Silent: true,
-                Text: "<font color=#323232><b>Book Appointment</b></font>",
-                "ActionType":"open-url",
-                "ActionBody": "http://www.executiveoptical.com/Appointment",
-                "TextSize": "regular",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 3,
-                Text: "<font color=#323232><b>SM Manila</b></font><font color=#777777><br>Stall 106 SM City City Manila, Concepcion cor. Arroceros & SAN Marcelino sts. Ermita Manila</font>", 
-                "ActionType": "none",
-                "ActionBody": "SM Manila",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 2,
-                Silent: true,
-                Text: "<font color=#323232><b>Book Appointment</b></font>",
-                "ActionType":"open-url",
-                "ActionBody": "http://www.executiveoptical.com/Appointment",
-                "TextSize": "regular",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 3,
-                Text: "<font color=#323232><b>Metropoint</b></font><font color=#777777><br>3/F Metropoint Mall, EDSA cor. Taft Ave., Pasay City Metro Manila</font>", 
-                "ActionType": "none",
-                "ActionBody": "Metropoint",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 2,
-                Silent: true,
-                Text: "<font color=#323232><b>Book Appointment</b></font>",
-                "ActionType":"open-url",
-                "ActionBody": "http://www.executiveoptical.com/Appointment",
-                "TextSize": "regular",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 3,
-                Text: "<font color=#323232><b>Market Market</b></font><font color=#777777><br>2/F Stall # S232 The Fort Bonifacio Global City Taguig, Metro Manila</font>", 
-                "ActionType": "none",
-                "ActionBody": "Market Market",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 2,
-                Silent: true,
-                Text: "<font color=#323232><b>Book Appointment</b></font>",
-                "ActionType":"open-url",
-                "ActionBody": "http://www.executiveoptical.com/Appointment",
-                "TextSize": "regular",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 3,
-                Text: "<font color=#323232><b>SM San Lazaro</b></font><font color=#777777><br>Upper G/F SM City San Lazaro, F Huertas cor. A.H. Lacson St., Sta. Cruz, Manila</font>", 
-                "ActionType": "none",
-                "ActionBody": "SM San Lazaro",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 2,
-                Silent: true,
-                Text: "<font color=#323232><b>Book Appointment</b></font>",
-                "ActionType":"open-url",
-                "ActionBody": "http://www.executiveoptical.com/Appointment",
-                "TextSize": "regular",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },
-            {
-                Columns: 6,
-                Rows: 3,
-                Silent: true,
-                "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg",
-                "ActionType":"reply",
-                "ActionBody":"See More Manila",
-            },
-            {
-                Columns: 6,
-                Rows: 2,
-                Text: "<font color=#323232><b>See More</b></font>", 
-                "ActionType": "reply",
-                "ActionBody": "See More Manila",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },                                                            
-            ];
-
-            var options2 = {
-                method: 'POST',
-                url: 'https://chatapi.viber.com/pa/send_message',
-                headers: headerBody,
-                body: {
-                    receiver: req.body.sender.id,
-                    min_api_version: 7,
-                    type: 'rich_media',
-                    rich_media: {
-                        Type: "rich_media",
-                        ButtonsGroupColumns: 6,
-                        ButtonsGroupRows: 7,
-                        BgColor: "#FFFFFF",
-                        Buttons: buttons1
-                    }
-                },
-                json: true
-            };     
-            request(options2, function(error2, res2, body2) {
-                if (error) throw new Error(error);
-                console.log(body);
+            // request to the chat api of viber.
+            request(options1, function(error1, res1, body1) {
+                if (error1) throw new Error(error1);                    
+                var buttons = [
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM Southmall</b></font><font color=#777777><br>SMS 1203 G/F SM Southmall, Las Pinas, Metro Manila</font>", 
+                        "ActionType":"none",                       
+                        "ActionBody": "SM Southmall",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Silent: true,
+                        Text: "<font color=#323232><b>Book Appointment</b></font>",
+                        "ActionType":"open-url",
+                        "ActionBody": "http://www.executiveoptical.com/Appointment",
+                        "TextSize": "regular",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM Manila</b></font><font color=#777777><br>Stall 106 SM City City Manila, Concepcion cor. Arroceros & SAN Marcelino sts. Ermita Manila</font>", 
+                        "ActionType": "none",
+                        "ActionBody": "SM Manila",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Silent: true,
+                        Text: "<font color=#323232><b>Book Appointment</b></font>",
+                        "ActionType":"open-url",
+                        "ActionBody": "http://www.executiveoptical.com/Appointment",
+                        "TextSize": "regular",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Metropoint</b></font><font color=#777777><br>3/F Metropoint Mall, EDSA cor. Taft Ave., Pasay City Metro Manila</font>", 
+                        "ActionType": "none",
+                        "ActionBody": "Metropoint",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Silent: true,
+                        Text: "<font color=#323232><b>Book Appointment</b></font>",
+                        "ActionType":"open-url",
+                        "ActionBody": "http://www.executiveoptical.com/Appointment",
+                        "TextSize": "regular",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>Market Market</b></font><font color=#777777><br>2/F Stall # S232 The Fort Bonifacio Global City Taguig, Metro Manila</font>", 
+                        "ActionType": "none",
+                        "ActionBody": "Market Market",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Silent: true,
+                        Text: "<font color=#323232><b>Book Appointment</b></font>",
+                        "ActionType":"open-url",
+                        "ActionBody": "http://www.executiveoptical.com/Appointment",
+                        "TextSize": "regular",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Text: "<font color=#323232><b>SM San Lazaro</b></font><font color=#777777><br>Upper G/F SM City San Lazaro, F Huertas cor. A.H. Lacson St., Sta. Cruz, Manila</font>", 
+                        "ActionType": "none",
+                        "ActionBody": "SM San Lazaro",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Silent: true,
+                        Text: "<font color=#323232><b>Book Appointment</b></font>",
+                        "ActionType":"open-url",
+                        "ActionBody": "http://www.executiveoptical.com/Appointment",
+                        "TextSize": "regular",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 3,
+                        Silent: true,
+                        "Image":"https://www.4shared.com/img/jdRXrELZea/s25/17c07ad5708/eo_logo.jpg",
+                        "ActionType":"reply",
+                        "ActionBody":"See More Manila",
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 2,
+                        Text: "<font color=#323232><b>See More</b></font>", 
+                        "ActionType": "reply",
+                        "ActionBody": "See More Manila",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    ];
+    
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 7,
+                        type: 'rich_media',                                   
+                        rich_media: {
+                            Type: "rich_media",
+                            ButtonsGroupColumns: 6,
+                            ButtonsGroupRows: 7,
+                            BgColor: "#FFFFFF",
+                            Buttons: buttons
+                        }                    
+                    },
+                    json: true
+                };
+    
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);                    
+                       
+                    var buttons2 = [
+                    {
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Branches</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Branches",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Products</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Products",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Services</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Services",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        Silent: true,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Contact Us</b>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }];                
+        
+                    var options2 = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.sender.id,
+                            min_api_version: 7,
+                            tracking_data: 'tracking data',                              
+                            keyboard: {
+                                "Type": "keyboard",
+                                "DefaultHeight": true,
+                                "InputFieldState": "hidden",                        
+                                "Buttons": buttons2
+                            }
+                        },
+                        json: true
+                    };
+        
+                    // request to the chat api of viber.
+                    request(options2, function(error2, res2, body2) {
+                        if (error2) throw new Error(error2);                    
+                        console.log(body);                     
+                    });
+                });                     
             });
+                        
         }
 
         else if(message === "See More Manila"){
