@@ -909,73 +909,7 @@ app.post('/', function(req, response) {
         else if(message === "Products" || message === "Product" || message === "products" || message === "product" || message === "PRODUCT" || message === "PRODUCTS"){
 
 
-            var buttons = [{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Branches</b>",
-                "ActionType": "reply",
-                "ActionBody": "Branches",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Products</b>",
-                "ActionType": "reply",
-                "ActionBody": "Products",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Services</b>",
-                "ActionType": "reply",
-                "ActionBody": "Services",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                Silent: true,
-                BgColor: "#87CEFA",
-                Text: "<b>Contact Us</b>",
-                "ActionType": "open-url",
-                "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            }];
-
-            var options = {
-                method: 'POST',
-                url: 'https://chatapi.viber.com/pa/send_message',
-                headers: headerBody,
-                body: {
-                    receiver: req.body.sender.id,
-                    min_api_version: 7,
-                    type: 'rich_media',                                   
-                    rich_media: {
-                        Type: "rich_media",
-                        ButtonsGroupColumns: 6,
-                        ButtonsGroupRows: 2,
-                        BgColor: "#FFFFFF",
-                        Buttons: buttons
-                    }                    
-                },
-                json: true
-            };
-
-            // request to the chat api of viber.
-            request(options, function(error, res, body) {
-                if (error) throw new Error(error);                    
-                   
-                var buttons2 = [
+            var buttons2 = [
                 {
                     Columns: 6,
                     Rows: 1,
@@ -1043,6 +977,72 @@ app.post('/', function(req, response) {
                     "TextHAlign": "middle"
                 }
                 ];
+
+            var options = {
+                method: 'POST',
+                url: 'https://chatapi.viber.com/pa/send_message',
+                headers: headerBody,
+                body: {
+                    receiver: req.body.sender.id,
+                    min_api_version: 7,
+                    type: 'rich_media',                                   
+                    rich_media: {
+                        Type: "rich_media",
+                        ButtonsGroupColumns: 6,
+                        ButtonsGroupRows: 2,
+                        BgColor: "#FFFFFF",
+                        Buttons: buttons
+                    }                    
+                },
+                json: true
+            };
+
+            // request to the chat api of viber.
+            request(options, function(error, res, body) {
+                if (error) throw new Error(error);                    
+                   
+                var buttons2 = [{
+                    Columns: 3,
+                    Rows: 2,
+                    BgColor: "#87CEFA",
+                    Text: "<b>Branches</b>",
+                    "ActionType": "reply",
+                    "ActionBody": "Branches",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },{
+                    Columns: 3,
+                    Rows: 2,
+                    BgColor: "#87CEFA",
+                    Text: "<b>Products</b>",
+                    "ActionType": "reply",
+                    "ActionBody": "Products",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },{
+                    Columns: 3,
+                    Rows: 2,
+                    BgColor: "#87CEFA",
+                    Text: "<b>Services</b>",
+                    "ActionType": "reply",
+                    "ActionBody": "Services",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },{
+                    Columns: 3,
+                    Rows: 2,
+                    Silent: true,
+                    BgColor: "#87CEFA",
+                    Text: "<b>Contact Us</b>",
+                    "ActionType": "open-url",
+                    "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                }];                
     
                 var options2 = {
                     method: 'POST',
