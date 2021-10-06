@@ -909,7 +909,7 @@ app.post('/', function(req, response) {
         else if(message === "Products" || message === "Product" || message === "products" || message === "product" || message === "PRODUCT" || message === "PRODUCTS"){
 
 
-            var buttons2 = [
+            var buttons = [
                 {
                     Columns: 6,
                     Rows: 1,
