@@ -192,7 +192,7 @@ app.post('/', function(req, response) {
 
         else if(message === "I Agree"){
 
-            MainMenu();
+            // MainMenu();
 
             var options = {
                 method: 'POST',
