@@ -75,6 +75,53 @@ app.post('/postToPublic', function(req, response) {
     response.end();
 });
 
+function MainMenu() {
+    var buttons = [{
+        Columns: 3,
+        Rows: 2,
+        BgColor: "#87CEFA",
+        Text: "<b>Branches</b>",
+        "ActionType": "reply",
+        "ActionBody": "Branches",
+        "TextSize": "large",
+        "TextVAlign": "middle",
+        "TextHAlign": "middle"
+    },{
+        Columns: 3,
+        Rows: 2,
+        BgColor: "#87CEFA",
+        Text: "<b>Products</b>",
+        "ActionType": "reply",
+        "ActionBody": "Products",
+        "TextSize": "large",
+        "TextVAlign": "middle",
+        "TextHAlign": "middle"
+    },{
+        Columns: 3,
+        Rows: 2,
+        BgColor: "#87CEFA",
+        Text: "<b>Services</b>",
+        "ActionType": "reply",
+        "ActionBody": "Services",
+        "TextSize": "large",
+        "TextVAlign": "middle",
+        "TextHAlign": "middle"
+    },{
+        Columns: 3,
+        Rows: 2,
+        Silent: true,
+        BgColor: "#87CEFA",
+        Text: "<b>Contact Us</b>",
+        "ActionType": "open-url",
+        "ActionBody": "http://www.executiveoptical.com/ContactUs",
+        "TextSize": "large",
+        "TextVAlign": "middle",
+        "TextHAlign": "middle"
+    }];
+
+    return buttons;
+}
+
 app.post('/', function(req, response) {
     response.writeHead(200);
 
@@ -145,48 +192,7 @@ app.post('/', function(req, response) {
 
         else if(message === "I Agree"){
 
-            var buttons = [{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Branches</b>",
-                "ActionType": "reply",
-                "ActionBody": "Branches",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Products</b>",
-                "ActionType": "reply",
-                "ActionBody": "Products",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Services</b>",
-                "ActionType": "reply",
-                "ActionBody": "Services",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                Silent: true,
-                BgColor: "#87CEFA",
-                Text: "<b>Contact Us</b>",
-                "ActionType": "open-url",
-                "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            }];
+            MainMenu();
 
             var options = {
                 method: 'POST',
@@ -202,7 +208,7 @@ app.post('/', function(req, response) {
                         "Type": "keyboard",
                         "DefaultHeight": true,
                         "InputFieldState": "hidden",                        
-                        "Buttons": buttons
+                        "Buttons": MainMenu()
                     }
                 },
                 json: true
@@ -649,7 +655,7 @@ app.post('/', function(req, response) {
                     min_api_version: 7,
                     tracking_data: 'tracking data',
                     type: 'text',
-                    text: 'Here are the list of Stores we have in ' + message + ':',
+                    text: 'More Lists:',
                 },
                 json: true
             };
@@ -888,7 +894,7 @@ app.post('/', function(req, response) {
                     min_api_version: 7,
                     tracking_data: 'tracking data',
                     type: 'text',
-                    text: 'Here are the list of Stores we have in ' + message + ':',
+                    text: 'More Lists:',
                 },
                 json: true
             };
@@ -1192,7 +1198,7 @@ app.post('/', function(req, response) {
                 });                     
             });            
         }
-        
+
         else if(message === "Products" || message === "Product" || message === "products" || message === "product" || message === "PRODUCT" || message === "PRODUCTS"){
 
             var options1 = {
