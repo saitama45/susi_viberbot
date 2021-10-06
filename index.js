@@ -959,9 +959,7 @@ app.post('/', function(req, response) {
                 body: {
                     receiver: req.body.sender.id,
                     min_api_version: 7,
-                    tracking_data: 'tracking data',                   
-                    type: 'text',
-                    text: 'We have a special variety of products for you. You can choose what categories you may want to explore.',                    
+                    type: 'rich_media',                                   
                     rich_media: {
                         Type: "rich_media",
                         ButtonsGroupColumns: 6,
@@ -1054,7 +1052,8 @@ app.post('/', function(req, response) {
                         receiver: req.body.sender.id,
                         min_api_version: 7,
                         tracking_data: 'tracking data',
-                        type: 'keyboard',
+                        type: 'text',
+                        text: 'We have a special variety of products for you. You can choose what categories you may want to explore.',    
                         keyboard: {
                             "Type": "keyboard",
                             "DefaultHeight": true,
