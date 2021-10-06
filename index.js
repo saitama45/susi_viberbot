@@ -190,9 +190,7 @@ app.post('/', function(req, response) {
             });            
         }
 
-        else if(message === "I Agree"){
-
-            // MainMenu();
+        else if(message === "I Agree"){           
 
             var options = {
                 method: 'POST',
@@ -241,7 +239,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                         Columns: 6,
                         Rows: 1,
@@ -323,7 +321,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 2,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -331,50 +329,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                         
         
                     var options2 = {
                         method: 'POST',
@@ -388,7 +343,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -423,7 +378,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                         Columns: 6,
                         Rows: 3,
@@ -562,7 +517,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -570,51 +525,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [
-                    {
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                           
         
                     var options2 = {
                         method: 'POST',
@@ -628,7 +539,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -663,7 +574,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                         Columns: 6,
                         Rows: 3,
@@ -802,7 +713,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -810,51 +721,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [
-                    {
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                              
         
                     var options2 = {
                         method: 'POST',
@@ -868,7 +735,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -902,7 +769,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                         Columns: 6,
                         Rows: 3,
@@ -960,7 +827,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -969,51 +836,7 @@ app.post('/', function(req, response) {
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
                     if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [
-                    {
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
-        
+                                                                  
                     var options2 = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
@@ -1026,7 +849,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -1060,7 +883,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                         Columns: 6,
                         Rows: 3,
@@ -1118,7 +941,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -1126,51 +949,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [
-                    {
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                              
         
                     var options2 = {
                         method: 'POST',
@@ -1184,7 +963,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -1218,7 +997,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                         Columns: 6,
                         Rows: 1,
@@ -1300,7 +1079,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 2,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -1308,50 +1087,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                             
         
                     var options2 = {
                         method: 'POST',
@@ -1365,7 +1101,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -1400,7 +1136,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                     "Columns":6,
                     "Rows":3,
@@ -1668,7 +1404,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -1676,50 +1412,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                              
         
                     var options2 = {
                         method: 'POST',
@@ -1733,7 +1426,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
@@ -1768,7 +1461,7 @@ app.post('/', function(req, response) {
             // request to the chat api of viber.
             request(options1, function(error1, res1, body1) {
                 if (error1) throw new Error(error1);                    
-                var buttons = [
+                var buttons1 = [
                     {
                     "Columns":6,
                     "Rows":3,
@@ -2036,7 +1729,7 @@ app.post('/', function(req, response) {
                             ButtonsGroupColumns: 6,
                             ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
-                            Buttons: buttons
+                            Buttons: buttons1
                         }                    
                     },
                     json: true
@@ -2044,50 +1737,7 @@ app.post('/', function(req, response) {
     
                 // request to the chat api of viber.
                 request(options, function(error, res, body) {
-                    if (error) throw new Error(error);                    
-                       
-                    var buttons2 = [{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Branches</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Branches",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Products</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Products",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Services</b>",
-                        "ActionType": "reply",
-                        "ActionBody": "Services",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },{
-                        Columns: 3,
-                        Rows: 2,
-                        Silent: true,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Contact Us</b>",
-                        "ActionType": "open-url",
-                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }];                
+                    if (error) throw new Error(error);                                                                             
         
                     var options2 = {
                         method: 'POST',
@@ -2101,7 +1751,7 @@ app.post('/', function(req, response) {
                                 "Type": "keyboard",
                                 "DefaultHeight": true,
                                 "InputFieldState": "hidden",                        
-                                "Buttons": buttons2
+                                "Buttons": MainMenu()
                             }
                         },
                         json: true
