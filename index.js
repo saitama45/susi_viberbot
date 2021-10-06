@@ -178,6 +178,7 @@ app.post('/', function(req, response) {
             },{
                 Columns: 3,
                 Rows: 2,
+                Silent: true,
                 BgColor: "#87CEFA",
                 Text: "<b>Contact Us</b>",
                 "ActionType": "open-url",
@@ -906,130 +907,170 @@ app.post('/', function(req, response) {
             });
         }
         else if(message === "Products" || message === "Product" || message === "products" || message === "product" || message === "PRODUCT" || message === "PRODUCTS"){
-            // setting options to request susi bot.
-            var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
+
+
+            var buttons = [{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Branches</b>",
+                "ActionType": "reply",
+                "ActionBody": "Branches",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Products</b>",
+                "ActionType": "reply",
+                "ActionBody": "Products",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                BgColor: "#87CEFA",
+                Text: "<b>Services</b>",
+                "ActionType": "reply",
+                "ActionBody": "Services",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            },{
+                Columns: 3,
+                Rows: 2,
+                Silent: true,
+                BgColor: "#87CEFA",
+                Text: "<b>Contact Us</b>",
+                "ActionType": "open-url",
+                "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                "TextSize": "large",
+                "TextVAlign": "middle",
+                "TextHAlign": "middle"
+            }];
+
+            var options = {
+                method: 'POST',
+                url: 'https://chatapi.viber.com/pa/send_message',
+                headers: headerBody,
+                body: {
+                    receiver: req.body.sender.id,
+                    min_api_version: 7,
+                    tracking_data: 'tracking data',
+                    type: 'text',
+                    text: 'We have a special variety of products for you. You can choose what categories you may want to explore.',
+                    keyboard: {
+                        "Type": "keyboard",
+                        "DefaultHeight": true,
+                        "InputFieldState": "hidden",                        
+                        "Buttons": buttons
+                    }
+                },
+                json: true
             };
-            // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
-                if (error1) throw new Error(error1);
-                // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-                
-                var options = {
+
+            // request to the chat api of viber.
+            request(options, function(error, res, body) {
+                if (error) throw new Error(error);                    
+                   
+                var buttons2 = [
+                {
+                    Columns: 6,
+                    Rows: 1,
+                    BgColor: "#87CEFA",
+                    Text: "<font color=#323232><b>Frames</b></font>", 
+                    "ActionType":"reply",                       
+                    "ActionBody": "Frames",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },
+                {
+                    Columns: 6,
+                    Rows: 1,
+                    BgColor: "#87CEFA",
+                    Text: "<font color=#323232><b>Contact Lens</b></font>", 
+                    "ActionType":"reply",                       
+                    "ActionBody": "Contact Lens",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },
+                {
+                    Columns: 6,
+                    Rows: 1,
+                    BgColor: "#87CEFA",
+                    Text: "<font color=#323232><b>Solutions</b></font>", 
+                    "ActionType":"reply",                       
+                    "ActionBody": "Solutions",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },
+                {
+                    Columns: 6,
+                    Rows: 1,
+                    BgColor: "#87CEFA",
+                    Text: "<font color=#323232><b>Sunglass</b></font>", 
+                    "ActionType":"reply",                       
+                    "ActionBody": "Sunglass",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },
+                {
+                    Columns: 6,
+                    Rows: 1,
+                    BgColor: "#87CEFA",
+                    Text: "<font color=#323232><b>Complete Eyeglass</b></font>", 
+                    "ActionType":"reply",                       
+                    "ActionBody": "Complete Eyeglass",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                },
+                {
+                    Columns: 6,
+                    Rows: 1,
+                    BgColor: "#87CEFA",
+                    Text: "<b>Accessories</b>", 
+                    "ActionType":"reply",                       
+                    "ActionBody": "Accessories",
+                    "TextSize": "large",
+                    "TextVAlign": "middle",
+                    "TextHAlign": "middle"
+                }
+                ];
+    
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
                     body: {
                         receiver: req.body.sender.id,
-                        min_api_version: 1,
+                        min_api_version: 7,
                         tracking_data: 'tracking data',
-                        type: 'text',
-                        text: 'We have a special variety of products for you. You can choose what categories you may want to explore.' 
+                        type: 'rich_media',
+                        rich_media: {
+                            Type: "rich_media",
+                            ButtonsGroupColumns: 6,
+                            ButtonsGroupRows: 2,
+                            BgColor: "#FFFFFF",
+                            Buttons: buttons
+                        }
                     },
                     json: true
                 };
+    
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
-                    var buttons = 
-                    [
-                    {
-                        Columns: 6,
-                        Rows: 1,
-                        BgColor: "#87CEFA",
-                        Text: "<font color=#323232><b>Frames</b></font>", 
-                        "ActionType":"reply",                       
-                        "ActionBody": "Frames",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 1,
-                        BgColor: "#87CEFA",
-                        Text: "<font color=#323232><b>Contact Lens</b></font>", 
-                        "ActionType":"reply",                       
-                        "ActionBody": "Contact Lens",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 1,
-                        BgColor: "#87CEFA",
-                        Text: "<font color=#323232><b>Solutions</b></font>", 
-                        "ActionType":"reply",                       
-                        "ActionBody": "Solutions",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 1,
-                        BgColor: "#87CEFA",
-                        Text: "<font color=#323232><b>Sunglass</b></font>", 
-                        "ActionType":"reply",                       
-                        "ActionBody": "Sunglass",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 1,
-                        BgColor: "#87CEFA",
-                        Text: "<font color=#323232><b>Complete Eyeglass</b></font>", 
-                        "ActionType":"reply",                       
-                        "ActionBody": "Complete Eyeglass",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    },
-                    {
-                        Columns: 6,
-                        Rows: 1,
-                        BgColor: "#87CEFA",
-                        Text: "<b>Accessories</b>", 
-                        "ActionType":"reply",                       
-                        "ActionBody": "Accessories",
-                        "TextSize": "large",
-                        "TextVAlign": "middle",
-                        "TextHAlign": "middle"
-                    }                    
-                ];
-                    var options2 = {
-                        method: 'POST',
-                        url: 'https://chatapi.viber.com/pa/send_message',
-                        headers: headerBody,
-                        body: {
-                            receiver: req.body.sender.id,
-                            min_api_version: 7,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 2,
-                                BgColor: "#FFFFFF",
-                                Buttons: buttons
-                            }
-                        },
-                        json: true
-                    };     
-                    request(options2, function(error2, res2, body2) {
-                        if (error) throw new Error(error);
-                        console.log(body);
-                    });               
+                request(options2, function(error2, res2, body2) {
+                    if (error2) throw new Error(error2);                    
+                    console.log(body);                     
                 });
-            });
+            });            
         }
 
         else if(message === "Contact Lens" || message === "contact lens" || message === "Contact lens" || message === "contact Lens" || message === "CONTACT LENS"){
