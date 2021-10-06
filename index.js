@@ -1360,7 +1360,7 @@ app.post('/', function(req, response) {
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
                     },
-                    ];
+                ];
     
                 var options = {
                     method: 'POST',
@@ -1373,7 +1373,7 @@ app.post('/', function(req, response) {
                         rich_media: {
                             Type: "rich_media",
                             ButtonsGroupColumns: 6,
-                            ButtonsGroupRows: 2,
+                            ButtonsGroupRows: 7,
                             BgColor: "#FFFFFF",
                             Buttons: buttons
                         }                    
