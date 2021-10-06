@@ -1089,42 +1089,25 @@ app.post('/', function(req, response) {
         }
 
         else if(message === "Contact Lens" || message === "contact lens" || message === "Contact lens" || message === "contact Lens" || message === "CONTACT LENS"){
-            // setting options to request susi bot.
+            
             var options1 = {
-                method: 'GET',
-                url: 'http://api.susi.ai/susi/chat.json',
-                qs: {
-                    timezoneOffset: '-330',
-                    q: message
-                }
+                method: 'POST',
+                url: 'https://chatapi.viber.com/pa/send_message',
+                headers: headerBody,
+                body: {
+                    receiver: req.body.sender.id,
+                    min_api_version: 7,
+                    tracking_data: 'tracking data',
+                    type: 'text',
+                    text: 'Here are our ' + message + ' products for you to choose from:' 
+                },
+                json: true
             };
 
-            // A request to the Susi bot
-            request(options1, function(error1, response1, body1) {
-                if (error1) throw new Error(error1);
-                // answer fetched from susi
-                ans = (JSON.parse(body1)).answers[0].actions[0].expression;
-                
-                var options = {
-                    method: 'POST',
-                    url: 'https://chatapi.viber.com/pa/send_message',
-                    headers: headerBody,
-                    body: {
-                        receiver: req.body.sender.id,
-                        min_api_version: 1,
-                        tracking_data: 'tracking data',
-                        type: 'text',
-                        text: 'Here are our ' + message + ' products for you to choose from:' 
-                    },
-                    json: true
-                };
-
-                // request to the chat api of viber.
-                request(options, function(error, res, body) {
-                    if (error) throw new Error(error);
-
-                    var buttons = 
-                    [
+            // request to the chat api of viber.
+            request(options1, function(error1, res1, body1) {
+                if (error1) throw new Error(error1);                    
+                var buttons = [
                     {
                     "Columns":6,
                     "Rows":3,
@@ -1377,8 +1360,74 @@ app.post('/', function(req, response) {
                     "TextVAlign":"middle",
                     "TextHAlign":"middle"
                     },
-                ];
-
+                    ];
+    
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 7,
+                        type: 'rich_media',                                   
+                        rich_media: {
+                            Type: "rich_media",
+                            ButtonsGroupColumns: 6,
+                            ButtonsGroupRows: 2,
+                            BgColor: "#FFFFFF",
+                            Buttons: buttons
+                        }                    
+                    },
+                    json: true
+                };
+    
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);                    
+                       
+                    var buttons2 = [{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Branches</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Branches",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Products</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Products",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Services</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Services",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        Silent: true,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Contact Us</b>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }];                
+        
                     var options2 = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
@@ -1386,23 +1435,25 @@ app.post('/', function(req, response) {
                         body: {
                             receiver: req.body.sender.id,
                             min_api_version: 7,
-                            type: 'rich_media',
-                            rich_media: {
-                                Type: "rich_media",
-                                ButtonsGroupColumns: 6,
-                                ButtonsGroupRows: 7,
-                                BgColor: "#FFFFFF",
-                                Buttons: buttons                                
+                            tracking_data: 'tracking data',                              
+                            keyboard: {
+                                "Type": "keyboard",
+                                "DefaultHeight": true,
+                                "InputFieldState": "hidden",                        
+                                "Buttons": buttons2
                             }
                         },
                         json: true
-                    };     
+                    };
+        
+                    // request to the chat api of viber.
                     request(options2, function(error2, res2, body2) {
-                        if (error) throw new Error(error);
-                        console.log(body);
-                    });               
-                });
+                        if (error2) throw new Error(error2);                    
+                        console.log(body);                     
+                    });
+                });                     
             });
+                        
         }
 
         else if(message === "Solutions" || message === "Solution" || message === "solutions" || message === "solution" || message === "SOLUTIONS" || message === "SOLUTION"){
