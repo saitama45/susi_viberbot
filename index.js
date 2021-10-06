@@ -959,15 +959,16 @@ app.post('/', function(req, response) {
                 body: {
                     receiver: req.body.sender.id,
                     min_api_version: 7,
-                    tracking_data: 'tracking data',
-                    type: 'text',
+                    tracking_data: 'tracking data',                   
                     text: 'We have a special variety of products for you. You can choose what categories you may want to explore.',
-                    keyboard: {
-                        "Type": "keyboard",
-                        "DefaultHeight": true,
-                        "InputFieldState": "hidden",                        
-                        "Buttons": buttons
-                    }
+                    type: 'rich_media',
+                    rich_media: {
+                        Type: "rich_media",
+                        ButtonsGroupColumns: 6,
+                        ButtonsGroupRows: 2,
+                        BgColor: "#FFFFFF",
+                        Buttons: buttons2
+                    }                    
                 },
                 json: true
             };
@@ -1053,13 +1054,12 @@ app.post('/', function(req, response) {
                         receiver: req.body.sender.id,
                         min_api_version: 7,
                         tracking_data: 'tracking data',
-                        type: 'rich_media',
-                        rich_media: {
-                            Type: "rich_media",
-                            ButtonsGroupColumns: 6,
-                            ButtonsGroupRows: 2,
-                            BgColor: "#FFFFFF",
-                            Buttons: buttons2
+                        type: 'keyboard',
+                        keyboard: {
+                            "Type": "keyboard",
+                            "DefaultHeight": true,
+                            "InputFieldState": "hidden",                        
+                            "Buttons": buttons
                         }
                     },
                     json: true
