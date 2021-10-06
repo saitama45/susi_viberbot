@@ -218,50 +218,7 @@ app.post('/', function(req, response) {
 
         else if(message === "Branches"){
 
-            var buttons = [{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Branches</b>",
-                "ActionType": "reply",
-                "ActionBody": "Branches",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Products</b>",
-                "ActionType": "reply",
-                "ActionBody": "Products",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Text: "<b>Services</b>",
-                "ActionType": "reply",
-                "ActionBody": "Services",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            },{
-                Columns: 3,
-                Rows: 2,
-                BgColor: "#87CEFA",
-                Silent: true,
-                Text: "<b>Contact Us</b>",
-                "ActionType": "open-url",
-                "ActionBody": "http://www.executiveoptical.com/ContactUs",
-                "TextSize": "large",
-                "TextVAlign": "middle",
-                "TextHAlign": "middle"
-            }];
-
-            var options = {
+            var options1 = {
                 method: 'POST',
                 url: 'https://chatapi.viber.com/pa/send_message',
                 headers: headerBody,
@@ -270,21 +227,174 @@ app.post('/', function(req, response) {
                     min_api_version: 7,
                     tracking_data: 'tracking data',
                     type: 'text',
-                    text: 'Type the City you wish to check so that I can send the list of stores we have in that area.',
-                    keyboard: {
-                        "Type": "keyboard",
-                        "DefaultHeight": true,                                            
-                        "Buttons": buttons
-                    }
+                    text: 'Select the City you wish to check so that I can send the list of stores we have in that area.',                        
                 },
                 json: true
             };
 
             // request to the chat api of viber.
-            request(options, function(error, res, body) {
-                if (error) throw new Error(error);                    
-                console.log(body);
-            });
+            request(options1, function(error1, res1, body1) {
+                if (error1) throw new Error(error1);                    
+                var buttons = [
+                    {
+                        Columns: 6,
+                        Rows: 1,
+                        BgColor: "#87CEFA",
+                        Text: "<font color=#323232><b>Metro Manila</b></font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Metro Manila",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 1,
+                        BgColor: "#87CEFA",
+                        Text: "<font color=#323232><b>Pasig City</b></font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Pasig",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 1,
+                        BgColor: "#87CEFA",
+                        Text: "<font color=#323232><b>Baguio City</b></font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Baguio",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 1,
+                        BgColor: "#87CEFA",
+                        Text: "<font color=#323232><b>Cebu City</b></font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Cebu",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 1,
+                        BgColor: "#87CEFA",
+                        Text: "<font color=#323232><b>Negros Occidental</b></font>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Negros Occidental",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },
+                    {
+                        Columns: 6,
+                        Rows: 1,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Quezon City</b>", 
+                        "ActionType":"reply",                       
+                        "ActionBody": "Quezon",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }
+                    ];
+    
+                var options = {
+                    method: 'POST',
+                    url: 'https://chatapi.viber.com/pa/send_message',
+                    headers: headerBody,
+                    body: {
+                        receiver: req.body.sender.id,
+                        min_api_version: 7,
+                        type: 'rich_media',                                   
+                        rich_media: {
+                            Type: "rich_media",
+                            ButtonsGroupColumns: 6,
+                            ButtonsGroupRows: 2,
+                            BgColor: "#FFFFFF",
+                            Buttons: buttons
+                        }                    
+                    },
+                    json: true
+                };
+    
+                // request to the chat api of viber.
+                request(options, function(error, res, body) {
+                    if (error) throw new Error(error);                    
+                       
+                    var buttons2 = [{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Branches</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Branches",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Products</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Products",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Services</b>",
+                        "ActionType": "reply",
+                        "ActionBody": "Services",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    },{
+                        Columns: 3,
+                        Rows: 2,
+                        Silent: true,
+                        BgColor: "#87CEFA",
+                        Text: "<b>Contact Us</b>",
+                        "ActionType": "open-url",
+                        "ActionBody": "http://www.executiveoptical.com/ContactUs",
+                        "TextSize": "large",
+                        "TextVAlign": "middle",
+                        "TextHAlign": "middle"
+                    }];                
+        
+                    var options2 = {
+                        method: 'POST',
+                        url: 'https://chatapi.viber.com/pa/send_message',
+                        headers: headerBody,
+                        body: {
+                            receiver: req.body.sender.id,
+                            min_api_version: 7,
+                            tracking_data: 'tracking data',                              
+                            keyboard: {
+                                "Type": "keyboard",
+                                "DefaultHeight": true,
+                                "InputFieldState": "hidden",                        
+                                "Buttons": buttons2
+                            }
+                        },
+                        json: true
+                    };
+        
+                    // request to the chat api of viber.
+                    request(options2, function(error2, res2, body2) {
+                        if (error2) throw new Error(error2);                    
+                        console.log(body);                     
+                    });
+                });                     
+            });            
                                               
         }
         
