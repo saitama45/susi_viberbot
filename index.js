@@ -76,6 +76,7 @@ app.post('/postToPublic', function(req, response) {
 });
 
 function MainMenu() {
+
     var buttons = [{
         Columns: 3,
         Rows: 2,
@@ -308,7 +309,7 @@ app.post('/', function(req, response) {
                     }
                     ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -328,10 +329,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                         
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -350,7 +351,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -504,7 +505,7 @@ app.post('/', function(req, response) {
                     },
                     ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -524,10 +525,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                           
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -546,7 +547,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -700,7 +701,7 @@ app.post('/', function(req, response) {
                     },
                     ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -720,10 +721,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                              
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -742,7 +743,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -814,7 +815,7 @@ app.post('/', function(req, response) {
                     }
                     ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -834,10 +835,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                    
                                                                   
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -856,7 +857,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -928,7 +929,7 @@ app.post('/', function(req, response) {
                     },
                     ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -948,10 +949,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                              
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -970,7 +971,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -1066,7 +1067,7 @@ app.post('/', function(req, response) {
                     }
                     ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -1086,10 +1087,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                             
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -1108,7 +1109,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -1391,7 +1392,7 @@ app.post('/', function(req, response) {
                     },
                 ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -1411,10 +1412,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                              
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -1433,7 +1434,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
@@ -1716,7 +1717,7 @@ app.post('/', function(req, response) {
                     },
                 ];
     
-                var options = {
+                var options2 = {
                     method: 'POST',
                     url: 'https://chatapi.viber.com/pa/send_message',
                     headers: headerBody,
@@ -1736,10 +1737,10 @@ app.post('/', function(req, response) {
                 };
     
                 // request to the chat api of viber.
-                request(options, function(error, res, body) {
+                request(options2, function(error, res, body) {
                     if (error) throw new Error(error);                                                                             
         
-                    var options2 = {
+                    var options = {
                         method: 'POST',
                         url: 'https://chatapi.viber.com/pa/send_message',
                         headers: headerBody,
@@ -1758,7 +1759,7 @@ app.post('/', function(req, response) {
                     };
         
                     // request to the chat api of viber.
-                    request(options2, function(error2, res2, body2) {
+                    request(options, function(error2, res2, body2) {
                         if (error2) throw new Error(error2);                    
                         console.log(body);                     
                     });
